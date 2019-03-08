@@ -1,0 +1,8 @@
+First Name	Last Name	ID	Title	Department	Mobile	Work Phone	Home Phone	Other Phone	Fax	Description	Reports to ID	Date Entered	Date Modified	Modified By ID	Assigned To	Username	Is Administrator	Address Street	Address City	Address State	Address Postal Code	Address Country	Portal API User	Status	Notify on Assignment	Employee Status	IM Name	IM Type	Group User
+	Administrator	1	Administrator									9/15/2017 10:54	9/15/2017 10:54	1		admin	1						0	Active	1	Active			0
+"Alexandrea ""Alex"""	Hatfield	2	CEO	Executive	830-708-1546	888-563-3090 x 102						9/15/2017 10:54	9/15/2017 10:54	1	1	ahatfield	0		Cibolo	TX	78108	USA	0	Active	1	Active	ahatfield88	Zello	0
+Joshua	Hatfield	3	Chief Strategy Officer	Executive	210-284-5219	888-563-3090 x 101					2	9/15/2017 10:54	9/15/2017 10:54	1	1	jhatfield	0		Cibolo	TX	78108	USA	0	Active	1	Active	jhatfield80	Zello	0
+Jay	Rebaldo	4	VP Acquisition Sales	Acquisition	210-887-1081	888-563-3090 x 105					6	9/15/2017 10:54	9/15/2017 10:54	1	1	jrebaldo	0		San Antonio	TX		USA	0	Active	1	Active	jrebaldo	Zello	0
+Ketrick	Sledge	5	Senior Account Rep	Acquisition	210-887-5980	888-563-3090 x 104					4	9/15/2017 10:54	9/15/2017 10:54	1	1	ksledge	0		San Antonio	TX		USA	0	Active	1	Active	ksledge1	Zello	0
+Khaled	Saffouri	6	President	Executive	210-391-1229	888-563-3090					2	9/15/2017 10:54	9/15/2017 10:54	1	1	khaled	0		San Antonio	TX		USA	0	Active	1	Active	khaledSaffouri	Zello	0
+Abel 	Pacheco	7	VP of Channel	Executive	210-548-5158	888-563-3090 					6	9/15/2017 10:54	9/15/2017 10:54	1	1	apacheco	0		San Antonio	TX		USA	0	Active	1	Active		Zello	0
