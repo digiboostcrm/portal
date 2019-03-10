@@ -1,0 +1,8 @@
+[17-Nov-2017 03:10:02 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not connect to the database. Please refer to suitecrm.log for details.' in /home/smartwrks/public_html/digiboost/portal/include/utils.php:1758
+Stack trace:
+#0 /home/smartwrks/public_html/digiboost/portal/include/database/MysqliManager.php(290): sugar_die('Could not conne...')
+#1 /home/smartwrks/public_html/digiboost/portal/include/database/DBManagerFactory.php(147): MysqliManager->connect(Array, true)
+#2 /home/smartwrks/public_html/digiboost/portal/include/entryPoint.php(179): DBManagerFactory::getInstance()
+#3 /home/smartwrks/public_html/digiboost/portal/index.php(47): require_once('/home/smartwrks...')
+#4 {main}
+  thrown in /home/smartwrks/public_html/digiboost/portal/include/utils.php on line 1758
