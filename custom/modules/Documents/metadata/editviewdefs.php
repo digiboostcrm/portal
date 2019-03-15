@@ -39,6 +39,11 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
+        'LBL_EDITVIEW_PANEL1' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
       ),
     ),
     'panels' => 
@@ -120,8 +125,9 @@ array (
         array (
           0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO_NAME',
+            'name' => 'accounts_contacts_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNTS_CONTACTS',
           ),
           1 => 
           array (
@@ -130,7 +136,21 @@ array (
             'label' => 'LBL_PORTAL_USER',
           ),
         ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'contact_list',
+            'label' => 'LBL_CONTACT_LIST',
+          ),
+          1 => 
+          array (
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO_NAME',
+          ),
+        ),
       ),
+
     ),
   ),
 );

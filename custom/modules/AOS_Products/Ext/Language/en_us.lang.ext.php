@@ -2,19 +2,19 @@
  //WARNING: The contents of this file are auto-generated
 
 
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_LEADS_AOS_PRODUCTS_1_FROM_LEADS_TITLE'] = 'Leads';
 
-$mod_strings = array (
-  'LBL_OUT_SOURCED' => 'Out Sourced',
-);
 
 //THIS FILE IS AUTO GENERATED, DO NOT MODIFY
 $mod_strings['LBL_LEADS_AOS_PRODUCTS_1_FROM_LEADS_TITLE'] = 'Leads';
 $mod_strings['LBL_OPPORTUNITIES_AOS_PRODUCTS_1_FROM_OPPORTUNITIES_TITLE'] = 'Opportunities';
 
 
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_LEADS_AOS_PRODUCTS_1_FROM_LEADS_TITLE'] = 'Leads';
 
+$mod_strings = array (
+  'LBL_OUT_SOURCED' => 'Out Sourced',
+);
 
 $mod_strings['LBL_QB_CREATED_TIME'] = 'QuickBooks Created Time';
 $mod_strings['LBL_QB_MODIFIED_TIME'] = 'QuickBooks Modified Time';

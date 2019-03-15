@@ -26,12 +26,6 @@ $dictionary["AOS_Invoices"]["fields"]["qbid_c"]= array (
 
 
 
- // created: 2018-06-22 18:18:07
-$dictionary['AOS_Invoices']['fields']['type_c']['inline_edit']='1';
-$dictionary['AOS_Invoices']['fields']['type_c']['labelValue']='Type';
-
- 
-
  // created: 2017-12-13 17:21:54
 $dictionary['AOS_Invoices']['fields']['created_from_c']['inline_edit']=1;
 $dictionary['AOS_Invoices']['fields']['created_from_c']['duplicate_merge_dom_value']=0;
@@ -110,4 +104,10 @@ $dictionary['AOS_Invoices']['fields']['filename'] = array(
 
 );
 */
+
+ // created: 2018-06-22 18:18:07
+$dictionary['AOS_Invoices']['fields']['type_c']['inline_edit']='1';
+$dictionary['AOS_Invoices']['fields']['type_c']['labelValue']='Type';
+
+ 
 ?>

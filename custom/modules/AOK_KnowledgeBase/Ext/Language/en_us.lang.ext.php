@@ -6,6 +6,11 @@
 $mod_strings['LBL_AOK_KNOWLEDGEBASE_AOK_KNOWLEDGE_BASE_CATEGORIES_1_FROM_AOK_KNOWLEDGE_BASE_CATEGORIES_TITLE'] = 'KB Categories';
 
 
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_AOK_KNOWLEDGEBASE_AOK_KNOWLEDGE_BASE_CATEGORIES_1_FROM_AOK_KNOWLEDGE_BASE_CATEGORIES_TITLE'] = 'KB Categories';
+$mod_strings['LBL_AOK_KNOWLEDGE_BASE_SUB_CAT_AOK_KNOWLEDGEBASE_1_FROM_AOK_KNOWLEDGE_BASE_SUB_CAT_TITLE'] = 'KB Sub Catagories';
+
+
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -59,10 +64,5 @@ $mod_strings = array (
 
 );
 
-
-
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_AOK_KNOWLEDGEBASE_AOK_KNOWLEDGE_BASE_CATEGORIES_1_FROM_AOK_KNOWLEDGE_BASE_CATEGORIES_TITLE'] = 'KB Categories';
-$mod_strings['LBL_AOK_KNOWLEDGE_BASE_SUB_CAT_AOK_KNOWLEDGEBASE_1_FROM_AOK_KNOWLEDGE_BASE_SUB_CAT_TITLE'] = 'KB Sub Catagories';
 
 ?>

@@ -8,7 +8,7 @@ class CasesViewList extends ViewList {
 		parent::__construct();
 	}
 	function display(){
-				global $db;
+		global $db;
 		global $current_user;
 		$user_id = $current_user->id;
 		$roleID = $_REQUEST['roleID'];
@@ -39,8 +39,7 @@ class CasesViewList extends ViewList {
 				if(role_id){					
 					window.location.href = "index.php?module=Cases&action=index&return_module=Cases&return_action=DetailView&roleID="+role_id+"&id="+user_id;
 				}
-				else{
-					
+				else{					
 					window.location.href = "index.php?module=Cases&action=index&return_module=Cases&return_action=DetailView";
 				}
 			});
@@ -55,7 +54,6 @@ class CasesViewList extends ViewList {
 		if(isset($_REQUEST['search_form_only']) && $_REQUEST['search_form_only'] == true){
 			return;
 		}
-		
 		global $db;
 			if(isset($_REQUEST['roleID']) && !empty($_REQUEST['roleID'])){
 				$queryVal = $_REQUEST['roleID'];
@@ -69,7 +67,14 @@ class CasesViewList extends ViewList {
 					//$this->lv->setup($this->seed, 'include/ListView/ListViewGeneric.tpl', $this->where, $this->params);
 					$savedSearchName = empty($_REQUEST['saved_search_select_name']) ? '' : (' - ' . $_REQUEST['saved_search_select_name']);
 				}
+				
+				if(!isset($_REQUEST['button'])){
+					$this->params['custom_where'] = " AND cases.state = 'Open'";  
+				}
+				
 			}
+
+		
 		/*	
 		if(isset($_REQUEST['roleID']) && !empty($_REQUEST['roleID']) && $_REQUEST['roleID'] != "myTicket"){
 			$roleID = $_REQUEST['roleID'];

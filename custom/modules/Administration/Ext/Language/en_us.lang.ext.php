@@ -3,6 +3,24 @@
 
 
 
+$mod_strings['LBL_MULTIUPLOAD'] = 'Multiupload Add-on';
+$mod_strings['LBL_MULTIUPLOAD_LICENSE_TITLE'] = 'License Configuration';
+$mod_strings['LBL_MULTIUPLOAD_LICENSE'] = 'Manage and configure the license for this add-on';
+
+
+
+if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
+
+$mod_strings['LBL_ADMIN_MODULE_NAME'] = 'Administration';
+$mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK'] = 'Configure Notification Modules';
+$mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK_DESC'] = 'Enable/Disable modules for Desktop Notification.';
+$mod_strings['LBL_NOTIFICATION_DESC'] = 'Configure which modules are available to users for Desktop Notification.';
+$mod_strings['LBL_NOTIFICATION_TITLE'] = 'Desktop Notification';
+
+
+
+
+
 if (!defined('sugarEntry') || !sugarEntry)
     die('Not A Valid Entry Point');
 /**
@@ -71,15 +89,18 @@ $mod_strings['LBL_CONTRACT_DETAILS']='Contract Details';
 
 
 
-if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-
-$mod_strings['LBL_ADMIN_MODULE_NAME'] = 'Administration';
-$mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK'] = 'Configure Notification Modules';
-$mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK_DESC'] = 'Enable/Disable modules for Desktop Notification.';
-$mod_strings['LBL_NOTIFICATION_DESC'] = 'Configure which modules are available to users for Desktop Notification.';
-$mod_strings['LBL_NOTIFICATION_TITLE'] = 'Desktop Notification';
+$mod_strings['LBL_LINK_NAME_P'] = 'Payment Configuration';
+$mod_strings['LBL_LINK_DESCRIPTION_P'] = 'Setting for payment configuration.';
+$mod_strings['LNK_LABLE_STATUS_ENABLE_DISABLE'] = 'Payment Enable/Disable';
+$mod_strings['LNK_MODULE_FEILDS'] = 'Payment Module and Fields';
+$mod_strings['LNK_STATUS_MODULE_FEILDS'] = 'Payment Status Module and Fields';
 
 
+
+
+$mod_strings['LBL_qbs_QBSugar'] = 'Quickbooks SuiteCRM Add-on';
+$mod_strings['LBL_qbs_QBSugar_LICENSE_TITLE'] = 'License Configuration';
+$mod_strings['LBL_qbs_QBSugar_LICENSE'] = 'Manage and configure the license for this add-on';
 
 
 
@@ -94,26 +115,5 @@ $mod_strings['LBL_MANAGE_REPORT_CONFIG'] = 'Reports parameters';
 $mod_strings['LBL_REPORT_CONFIG'] = 'Set reports parameters';
 $mod_strings['LBL_REPORT_CONFIG_DESC'] = 'Configure reports parameters';
 $mod_strings['LBL_REPORT_CONFIG_TITLE'] = 'Reports';
-
-
-
-$mod_strings['LBL_qbs_QBSugar'] = 'Quickbooks SuiteCRM Add-on';
-$mod_strings['LBL_qbs_QBSugar_LICENSE_TITLE'] = 'License Configuration';
-$mod_strings['LBL_qbs_QBSugar_LICENSE'] = 'Manage and configure the license for this add-on';
-
-
-
-$mod_strings['LBL_LINK_NAME_P'] = 'Payment Configuration';
-$mod_strings['LBL_LINK_DESCRIPTION_P'] = 'Setting for payment configuration.';
-$mod_strings['LNK_LABLE_STATUS_ENABLE_DISABLE'] = 'Payment Enable/Disable';
-$mod_strings['LNK_MODULE_FEILDS'] = 'Payment Module and Fields';
-$mod_strings['LNK_STATUS_MODULE_FEILDS'] = 'Payment Status Module and Fields';
-
-
-
-
-$mod_strings['LBL_MULTIUPLOAD'] = 'Multiupload Add-on';
-$mod_strings['LBL_MULTIUPLOAD_LICENSE_TITLE'] = 'License Configuration';
-$mod_strings['LBL_MULTIUPLOAD_LICENSE'] = 'Manage and configure the license for this add-on';
 
 ?>

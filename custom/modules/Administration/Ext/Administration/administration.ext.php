@@ -3,6 +3,55 @@
 
 
 
+global $sugar_version;
+
+$admin_option_defs=array();
+
+if(preg_match( "/^6.*/", $sugar_version) ) {
+    $admin_option_defs['Administration']['multiupload_info']= array('helpInline','LBL_MULTIUPLOAD_LICENSE_TITLE','LBL_MULTIUPLOAD_LICENSE','./index.php?module=Multiupload&action=license');
+} else {
+    $admin_option_defs['Administration']['multiupload_info']= array('helpInline','LBL_MULTIUPLOAD_LICENSE_TITLE','LBL_MULTIUPLOAD_LICENSE','javascript:parent.SUGAR.App.router.navigate("#bwc/index.php?module=Multiupload&action=license", {trigger: true});');
+}
+
+$admin_group_header[]= array('LBL_MULTIUPLOAD','',false,$admin_option_defs, '');
+
+
+if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
+
+$links = array();
+global $mod_strings;
+$links['Administration']['configure_notification_link'] = array(
+    $mod_strings['LBL_ADMIN_MODULE_NAME'],
+    // title of the link 
+    $mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK'],
+
+    // description for the link
+    $mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK_DESC'],
+
+    // where to send the user when the link is clicked
+    './index.php?module=bc_Notification&action=setNotificationModules',
+
+);
+
+$admin_group_header [] = array(
+
+    // The title for the group of links
+    $mod_strings['LBL_NOTIFICATION_TITLE'],
+
+    '',
+
+    false,
+
+    $links,
+
+    // a description for what this section is about
+    $mod_strings['LBL_NOTIFICATION_DESC']
+
+);
+
+
+
+
 if (!defined('sugarEntry') || !sugarEntry)
     die('Not A Valid Entry Point');
 /**
@@ -91,18 +140,6 @@ $admin_group_header [] = array(
 
 
 
-/*
- * Created by Richlode Solutions
- * Author: Andrii Vasylchenko
- */
-
-$admin_option_defs = array();
-$admin_option_defs['Administration']['rls_Reports_configurator'] = array('Administration', 'LBL_MANAGE_REPORT_CONFIG', 'LBL_REPORT_CONFIG', './index.php?module=Configurator&action=rls_Reports_configurator');
-
-$admin_group_header[] = array('LBL_REPORT_CONFIG_TITLE', '', false, $admin_option_defs, 'LBL_REPORT_CONFIG_DESC');
-
-
-
 global $sugar_version;
 
 $admin_option_defs=array();
@@ -125,51 +162,14 @@ $admin_group_header[]= array('LBL_REPORTLICENSEADDON','',false,$admin_option_def
 
 
 
-global $sugar_version;
+/*
+ * Created by Richlode Solutions
+ * Author: Andrii Vasylchenko
+ */
 
-$admin_option_defs=array();
+$admin_option_defs = array();
+$admin_option_defs['Administration']['rls_Reports_configurator'] = array('Administration', 'LBL_MANAGE_REPORT_CONFIG', 'LBL_REPORT_CONFIG', './index.php?module=Configurator&action=rls_Reports_configurator');
 
-if(preg_match( "/^6.*/", $sugar_version) ) {
-    $admin_option_defs['Administration']['multiupload_info']= array('helpInline','LBL_MULTIUPLOAD_LICENSE_TITLE','LBL_MULTIUPLOAD_LICENSE','./index.php?module=Multiupload&action=license');
-} else {
-    $admin_option_defs['Administration']['multiupload_info']= array('helpInline','LBL_MULTIUPLOAD_LICENSE_TITLE','LBL_MULTIUPLOAD_LICENSE','javascript:parent.SUGAR.App.router.navigate("#bwc/index.php?module=Multiupload&action=license", {trigger: true});');
-}
-
-$admin_group_header[]= array('LBL_MULTIUPLOAD','',false,$admin_option_defs, '');
-
-
-if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-
-$links = array();
-global $mod_strings;
-$links['Administration']['configure_notification_link'] = array(
-    $mod_strings['LBL_ADMIN_MODULE_NAME'],
-    // title of the link 
-    $mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK'],
-
-    // description for the link
-    $mod_strings['LBL_NOTIFICATION_CONFIGURE_MODULE_LINK_DESC'],
-
-    // where to send the user when the link is clicked
-    './index.php?module=bc_Notification&action=setNotificationModules',
-
-);
-
-$admin_group_header [] = array(
-
-    // The title for the group of links
-    $mod_strings['LBL_NOTIFICATION_TITLE'],
-
-    '',
-
-    false,
-
-    $links,
-
-    // a description for what this section is about
-    $mod_strings['LBL_NOTIFICATION_DESC']
-
-);
-
+$admin_group_header[] = array('LBL_REPORT_CONFIG_TITLE', '', false, $admin_option_defs, 'LBL_REPORT_CONFIG_DESC');
 
 ?>

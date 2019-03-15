@@ -2,10 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_CASES_DG_COMMENTS_1_FROM_DG_COMMENTS_TITLE'] = 'Comments';
-
-
 /**
  * The file used to store label for relationship of User Group module and Contacts.
  *
@@ -21,6 +17,10 @@ $mod_strings['LBL_CHAT_DESCRIPTION_C'] = 'Chat Description';
 $mod_strings['LBL_EMAIL_UID_C'] = 'Email Uid';
 $mod_strings['LBL_CREATED_BY_NAME'] = 'Created By';
 
+
+
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CASES_DG_COMMENTS_1_FROM_DG_COMMENTS_TITLE'] = 'Comments';
 
 
 /**

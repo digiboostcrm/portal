@@ -2,6 +2,136 @@
  //WARNING: The contents of this file are auto-generated
 
 
+
+$job_strings[] = 'email_parser_content_chat_portal';
+
+function email_parser_content_chat_portal() {
+
+    require_once 'modules/InboundEmail/InboundEmail.php';
+    require_once('modules/Administration/Administration.php');
+    require_once 'custom/biz/function/default_portal_module.php';
+
+    global $db;
+
+    $administrationObj = new Administration();
+    $administrationObj->retrieveSettings('PortalPlugin');
+
+    $chatEnable = $administrationObj->settings['PortalPlugin_ChatEnable'];
+    $ie_user = $administrationObj->settings['PortalPlugin_GmailUsername'];
+    $ie_mailBox = $administrationObj->settings['PortalPlugin_GmailMailbox'];
+    $ie_userpass = $administrationObj->settings['PortalPlugin_GmailPassword'];
+
+    if ($chatEnable == '1') {
+        $get_ie_settings = "SELECT id, name FROM inbound_email
+                    WHERE deleted=0 
+                    AND status='Active' 
+                    AND mailbox_type != 'bounce' 
+                    AND find_in_set('{$ie_mailBox}',mailbox)
+                    and email_user = '{$ie_user}'";
+        $run_query = $db->query($get_ie_settings);
+        $data = $db->fetchByAssoc($run_query);
+        $ie = new InboundEmail();
+        $ie->retrieve($data['id']);
+        $service = $ie->getServiceString();
+        $connectString = $ie->getConnectString($service, $ie_mailBox);
+        $hostname = $connectString;
+        $inbox = imap_open($hostname, $ie_user, $ie_userpass) or die('Cannot connect to Gmail: ' . imap_last_error());
+        $schedulerDate = "SELECT date_modified FROM job_queue WHERE target='function::email_parser_content_chat_portal' AND status='done' AND resolution='success' ORDER BY date_modified desc LIMIT 1";
+        $dateTime = $db->query($schedulerDate);
+        $date = $db->fetchByAssoc($dateTime);
+        $timestamp = strtotime($date['date_modified']);
+        if ($timestamp > 0) {
+            $checkTime = date('r', $timestamp);
+        }
+        $criteria = "SINCE \"{$checkTime}\" UNDELETED";
+        $emails = imap_search($inbox, $criteria, SE_UID);
+        $emails = getUidForCreateNewCaseBasedOnEmailUid($emails);
+        if ($emails) {
+            rsort($emails);
+            foreach ($emails as $email_number) {
+                $overview = imap_fetch_overview($inbox, $email_number, FT_UID);
+                $message = imap_fetchbody($inbox, $email_number,1, FT_UID);
+                $chat_emailAdd = getEmailAddressFromText($message);
+                $contactId = getCRMContactsBasedOnChatEmail($chat_emailAdd);
+                if ($contactId != '') {
+                    $conObj = new Contact();
+                    $conObj->retrieve($contactId);
+                    $accounts = $conObj->get_linked_beans('accounts', 'Account');
+                    $subject = $overview['0']->subject;
+                    $caseObj = new aCase();
+                    $caseObj->name = $subject;
+                    $caseObj->chat_description_c = $message;
+                    $caseObj->email_uid_c = $overview['0']->uid;
+                    $caseObj->save();
+                    // relate new created case to contact
+                    $caseID = $caseObj->id;
+                    $link = 'cases';
+                    if ($conObj->load_relationship($link)) {
+                        $conObj->$link->add($caseID);
+                    }
+                    if (!empty($accounts)) {
+                        $accountId = $accounts['0']->id;
+                        $accountObj = new Account();
+                        $accountObj->retrieve($accountId);
+                        if ($accountObj->load_relationship($link)) {
+                            $accountObj->$link->add($caseID);
+                        }
+                    }
+                    imap_setflag_full($inbox, $email_number, "\\Seen",ST_UID);
+                }
+            }
+        }
+        imap_close($inbox);
+    }
+    return true;
+}
+
+
+
+
+
+array_push($job_strings, 'qbs_qbsugar');
+function qbs_qbsugar()
+{
+    $startTime = microtime(true);
+    require_once('include/entryPoint.php');
+    require_once('include/MVC/SugarApplication.php');
+    require_once('modules/qbs_QBSugar/HandleQBQueue.php');
+    $app = new SugarApplication();
+
+    // error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING ^ E_DEPRECATED); ini_set('display_errors', 'On');
+
+    global $sugar_version, $db, $dictionary, $current_user;
+
+    $QBQueueList = array();
+    $HQBQueue = new HandleQBQueue();
+    $QBQueueList = $HQBQueue->getQBQueue();
+
+    $QBQueueListCount = count($QBQueueList);
+    if($QBQueueListCount > 0)   {
+        for($i = 0; $i < $QBQueueListCount ; $i++)  {
+            global $db;
+            $functionNames = array('getContactsfromQB', 'sendContactstoQB', 'getInvoicefromQB', 'sendInvoicetoQB', 'getQuotesfromQB', 'sendQuotestoQB', 'getProductsfromQB', 'sendProductstoQB');
+
+            if(in_array($QBQueueList[$i]['id'], $functionNames))    {
+                $flow = 'Quickbooks => Suite';
+                $vtigermodules = array('QBCustomer', 'QBQuotes','QBInvoice', 'QBItem');
+                if(in_array($QBQueueList[$i]['module'], $vtigermodules))    {
+                    $flow = 'Suite => Quickbooks';
+                }
+
+                $finalcall = $HQBQueue->ExecuteManualQBQueue($QBQueueList[$i]['module']);
+                continue;
+            }
+            else    {
+                $HQBQueue->ExecuteQBQueue($QBQueueList[$i]['id'], $QBQueueList[$i]['module'], $QBQueueList[$i]['source'], $QBQueueList[$i]['queuemode']);
+            }
+        }
+    }
+    return true;
+}
+
+
 array_push($job_strings, 'SendReports_Job');
 function SendReports_Job()
 {
@@ -152,135 +282,5 @@ function sendReportToEmail($reports_bean, $email_address, $now_db,$RLS_Schedulin
 }
 
 
-
-
-
-$job_strings[] = 'email_parser_content_chat_portal';
-
-function email_parser_content_chat_portal() {
-
-    require_once 'modules/InboundEmail/InboundEmail.php';
-    require_once('modules/Administration/Administration.php');
-    require_once 'custom/biz/function/default_portal_module.php';
-
-    global $db;
-
-    $administrationObj = new Administration();
-    $administrationObj->retrieveSettings('PortalPlugin');
-
-    $chatEnable = $administrationObj->settings['PortalPlugin_ChatEnable'];
-    $ie_user = $administrationObj->settings['PortalPlugin_GmailUsername'];
-    $ie_mailBox = $administrationObj->settings['PortalPlugin_GmailMailbox'];
-    $ie_userpass = $administrationObj->settings['PortalPlugin_GmailPassword'];
-
-    if ($chatEnable == '1') {
-        $get_ie_settings = "SELECT id, name FROM inbound_email
-                    WHERE deleted=0 
-                    AND status='Active' 
-                    AND mailbox_type != 'bounce' 
-                    AND find_in_set('{$ie_mailBox}',mailbox)
-                    and email_user = '{$ie_user}'";
-        $run_query = $db->query($get_ie_settings);
-        $data = $db->fetchByAssoc($run_query);
-        $ie = new InboundEmail();
-        $ie->retrieve($data['id']);
-        $service = $ie->getServiceString();
-        $connectString = $ie->getConnectString($service, $ie_mailBox);
-        $hostname = $connectString;
-        $inbox = imap_open($hostname, $ie_user, $ie_userpass) or die('Cannot connect to Gmail: ' . imap_last_error());
-        $schedulerDate = "SELECT date_modified FROM job_queue WHERE target='function::email_parser_content_chat_portal' AND status='done' AND resolution='success' ORDER BY date_modified desc LIMIT 1";
-        $dateTime = $db->query($schedulerDate);
-        $date = $db->fetchByAssoc($dateTime);
-        $timestamp = strtotime($date['date_modified']);
-        if ($timestamp > 0) {
-            $checkTime = date('r', $timestamp);
-        }
-        $criteria = "SINCE \"{$checkTime}\" UNDELETED";
-        $emails = imap_search($inbox, $criteria, SE_UID);
-        $emails = getUidForCreateNewCaseBasedOnEmailUid($emails);
-        if ($emails) {
-            rsort($emails);
-            foreach ($emails as $email_number) {
-                $overview = imap_fetch_overview($inbox, $email_number, FT_UID);
-                $message = imap_fetchbody($inbox, $email_number,1, FT_UID);
-                $chat_emailAdd = getEmailAddressFromText($message);
-                $contactId = getCRMContactsBasedOnChatEmail($chat_emailAdd);
-                if ($contactId != '') {
-                    $conObj = new Contact();
-                    $conObj->retrieve($contactId);
-                    $accounts = $conObj->get_linked_beans('accounts', 'Account');
-                    $subject = $overview['0']->subject;
-                    $caseObj = new aCase();
-                    $caseObj->name = $subject;
-                    $caseObj->chat_description_c = $message;
-                    $caseObj->email_uid_c = $overview['0']->uid;
-                    $caseObj->save();
-                    // relate new created case to contact
-                    $caseID = $caseObj->id;
-                    $link = 'cases';
-                    if ($conObj->load_relationship($link)) {
-                        $conObj->$link->add($caseID);
-                    }
-                    if (!empty($accounts)) {
-                        $accountId = $accounts['0']->id;
-                        $accountObj = new Account();
-                        $accountObj->retrieve($accountId);
-                        if ($accountObj->load_relationship($link)) {
-                            $accountObj->$link->add($caseID);
-                        }
-                    }
-                    imap_setflag_full($inbox, $email_number, "\\Seen",ST_UID);
-                }
-            }
-        }
-        imap_close($inbox);
-    }
-    return true;
-}
-
-
-
-
-
-array_push($job_strings, 'qbs_qbsugar');
-function qbs_qbsugar()
-{
-    $startTime = microtime(true);
-    require_once('include/entryPoint.php');
-    require_once('include/MVC/SugarApplication.php');
-    require_once('modules/qbs_QBSugar/HandleQBQueue.php');
-    $app = new SugarApplication();
-
-    // error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING ^ E_DEPRECATED); ini_set('display_errors', 'On');
-
-    global $sugar_version, $db, $dictionary, $current_user;
-
-    $QBQueueList = array();
-    $HQBQueue = new HandleQBQueue();
-    $QBQueueList = $HQBQueue->getQBQueue();
-
-    $QBQueueListCount = count($QBQueueList);
-    if($QBQueueListCount > 0)   {
-        for($i = 0; $i < $QBQueueListCount ; $i++)  {
-            global $db;
-            $functionNames = array('getContactsfromQB', 'sendContactstoQB', 'getInvoicefromQB', 'sendInvoicetoQB', 'getQuotesfromQB', 'sendQuotestoQB', 'getProductsfromQB', 'sendProductstoQB');
-
-            if(in_array($QBQueueList[$i]['id'], $functionNames))    {
-                $flow = 'Quickbooks => Suite';
-                $vtigermodules = array('QBCustomer', 'QBQuotes','QBInvoice', 'QBItem');
-                if(in_array($QBQueueList[$i]['module'], $vtigermodules))    {
-                    $flow = 'Suite => Quickbooks';
-                }
-
-                $finalcall = $HQBQueue->ExecuteManualQBQueue($QBQueueList[$i]['module']);
-                continue;
-            }
-            else    {
-                $HQBQueue->ExecuteQBQueue($QBQueueList[$i]['id'], $QBQueueList[$i]['module'], $QBQueueList[$i]['source'], $QBQueueList[$i]['queuemode']);
-            }
-        }
-    }
-    return true;
-}
 
 ?>

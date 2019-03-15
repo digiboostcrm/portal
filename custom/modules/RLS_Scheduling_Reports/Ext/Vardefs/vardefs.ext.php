@@ -2,18 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2015-06-16 11:39:51
-$dictionary["RLS_Scheduling_Reports"]["fields"]["rls_scheduling_reports_users"] = array (
-  'name' => 'rls_scheduling_reports_users',
-  'type' => 'link',
-  'relationship' => 'rls_scheduling_reports_users',
-  'source' => 'non-db',
-  'module' => 'Users',
-  'bean_name' => 'User',
-  'vname' => 'LBL_RLS_SCHEDULING_REPORTS_USERS_FROM_USERS_TITLE',
-);
-
-
 // created: 2015-06-16 11:43:23
 $dictionary["RLS_Scheduling_Reports"]["fields"]["rls_scheduling_reports_contacts"] = array (
   'name' => 'rls_scheduling_reports_contacts',
@@ -35,6 +23,18 @@ $dictionary["RLS_Scheduling_Reports"]["fields"]["rls_scheduling_reports_rls_repo
   'module' => 'rls_Reports',
   'bean_name' => 'rls_Reports',
   'vname' => 'LBL_RLS_SCHEDULING_REPORTS_RLS_REPORTS_FROM_RLS_REPORTS_TITLE',
+);
+
+
+// created: 2015-06-16 11:39:51
+$dictionary["RLS_Scheduling_Reports"]["fields"]["rls_scheduling_reports_users"] = array (
+  'name' => 'rls_scheduling_reports_users',
+  'type' => 'link',
+  'relationship' => 'rls_scheduling_reports_users',
+  'source' => 'non-db',
+  'module' => 'Users',
+  'bean_name' => 'User',
+  'vname' => 'LBL_RLS_SCHEDULING_REPORTS_USERS_FROM_USERS_TITLE',
 );
 
 ?>

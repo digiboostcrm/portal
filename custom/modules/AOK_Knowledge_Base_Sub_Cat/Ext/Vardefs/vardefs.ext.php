@@ -2,19 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2018-04-24 17:41:51
-$dictionary["AOK_Knowledge_Base_Sub_Cat"]["fields"]["aok_knowledge_base_sub_cat_aok_knowledgebase_1"] = array (
-  'name' => 'aok_knowledge_base_sub_cat_aok_knowledgebase_1',
-  'type' => 'link',
-  'relationship' => 'aok_knowledge_base_sub_cat_aok_knowledgebase_1',
-  'source' => 'non-db',
-  'module' => 'AOK_KnowledgeBase',
-  'bean_name' => 'AOK_KnowledgeBase',
-  'side' => 'right',
-  'vname' => 'LBL_AOK_KNOWLEDGE_BASE_SUB_CAT_AOK_KNOWLEDGEBASE_1_FROM_AOK_KNOWLEDGEBASE_TITLE',
-);
-
-
 // created: 2018-04-18 22:13:22
 $dictionary["AOK_Knowledge_Base_Sub_Cat"]["fields"]["aok_knowledge_base_categories_aok_knowledge_base_sub_cat_1"] = array (
   'name' => 'aok_knowledge_base_categories_aok_knowledge_base_sub_cat_1',
@@ -46,6 +33,19 @@ $dictionary["AOK_Knowledge_Base_Sub_Cat"]["fields"]["aok_knowlea2e5egories_ida"]
   'reportable' => false,
   'side' => 'right',
   'vname' => 'LBL_AOK_KNOWLEDGE_BASE_CATEGORIES_AOK_KNOWLEDGE_BASE_SUB_CAT_1_FROM_AOK_KNOWLEDGE_BASE_SUB_CAT_TITLE',
+);
+
+
+// created: 2018-04-24 17:41:51
+$dictionary["AOK_Knowledge_Base_Sub_Cat"]["fields"]["aok_knowledge_base_sub_cat_aok_knowledgebase_1"] = array (
+  'name' => 'aok_knowledge_base_sub_cat_aok_knowledgebase_1',
+  'type' => 'link',
+  'relationship' => 'aok_knowledge_base_sub_cat_aok_knowledgebase_1',
+  'source' => 'non-db',
+  'module' => 'AOK_KnowledgeBase',
+  'bean_name' => 'AOK_KnowledgeBase',
+  'side' => 'right',
+  'vname' => 'LBL_AOK_KNOWLEDGE_BASE_SUB_CAT_AOK_KNOWLEDGEBASE_1_FROM_AOK_KNOWLEDGEBASE_TITLE',
 );
 
 ?>

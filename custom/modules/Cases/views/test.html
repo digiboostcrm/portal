@@ -1,0 +1,429 @@
+<div class="panel-content">
+   <div>&nbsp;</div>
+   <div class="panel panel-default">
+      <div class="panel-heading ">
+         <a class="" role="button" data-toggle="collapse-edit" aria-expanded="false">
+            <div class="col-xs-10 col-sm-11 col-md-11">
+               OVERVIEW
+            </div>
+         </a>
+      </div>
+      <div class="panel-body panel-collapse collapse in panelContainer" id="detailpanel_-1" data-id="LBL_DOCUMENT_INFORMATION">
+         <div class="tab-content">
+            <!-- tab_panel_content.tpl -->
+            <div class="row edit-view-row">
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_FILENAME">
+                     File Name:<span class="required">*</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="file" field="filename">
+                     <script type="text/javascript" src="cache/include/externalAPI.cache.js?v=grVfEozyb_JpPYt_Z998ZQ"></script>
+                     <script type="text/javascript" src="include/SugarFields/Fields/File/SugarFieldFile.js?v=grVfEozyb_JpPYt_Z998ZQ"></script>
+                     <input type="hidden" name="deleteAttachment" value="0">
+                     <input type="hidden" name="filename" id="filename" value="Monthly Website Management Update Report-zhemian.com-02-01-2019-03-01-2019.pdf">
+                     <input type="hidden" name="doc_id" id="doc_id" value="">
+                     <input type="hidden" name="doc_url" id="doc_url" value="">
+                     <input type="hidden" name="filename_old_doctype" id="filename_old_doctype" value="Sugar">
+                     <span id="filename_old" style="display:">
+                     <a href="index.php?entryPoint=download&amp;id=dce63432-3d50-2686-290a-5c7f07eb2efa&amp;type=Documents" class="tabDetailViewDFLink">Monthly Website Management Update Report-zhemian.com-02-01-2019-03-01-2019.pdf</a>
+                     </span>
+                     <script type="text/javascript">
+                        YAHOO.util.Event.onDOMReady(function() 
+                        {
+                        document.getElementById("doc_type").disabled = true;
+                        });
+                     </script>
+                     <script type="text/javascript">
+                        var filename_setFileName = function()
+                        
+                        {
+                            var dom = YAHOO.util.Dom;
+                            
+                            sourceElement = "filename_file";
+                            targetElement = "document_name";
+                        	src = new String(dom.get(sourceElement).value);
+                        	target = new String(dom.get(targetElement).value);
+                        
+                        	if (target.length == 0) 
+                        	{
+                        		lastindex=src.lastIndexOf("/");
+                        		if (lastindex == -1) {
+                        			lastindex=src.lastIndexOf("\\");
+                        		} 
+                        		if (lastindex == -1) {
+                        			dom.get(targetElement).value=src;
+                        		} else {
+                        			dom.get(targetElement).value=src.substr(++lastindex, src.length);
+                        		}	
+                        	}	
+                        }
+                        
+                        
+                        YAHOO.util.Event.onDOMReady(function() 
+                        {
+                        if(document.getElementById("document_name"))
+                        {
+                        YAHOO.util.Event.addListener('filename_file', 'change', filename_setFileName);
+                        YAHOO.util.Event.addListener(['filename_file', 'doc_type'], 'change', SUGAR.field.file.checkFileExtension,{ fileEl: 'filename_file', targEl: 'document_name'});
+                        }
+                        });
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DOC_STATUS">
+                     Status:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="enum" field="status_id">
+                     <select name="status_id" id="status_id" title="">
+                        <option label="Active" value="Active" selected="selected">Active</option>
+                        <option label="Draft" value="Draft">Draft</option>
+                        <option label="FAQ" value="FAQ">FAQ</option>
+                        <option label="Expired" value="Expired">Expired</option>
+                        <option label="Under Review" value="Under Review">Under Review</option>
+                        <option label="Pending" value="Pending">Pending</option>
+                     </select>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_NAME">
+                     Document Name:<span class="required">*</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="varchar" field="document_name">
+                     <input type="text" name="document_name" id="document_name" size="30" maxlength="255" value="Monthly Website Management Update Report-zhemian.com-02-01-2019-03-01-2019.pdf" title="">
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DOC_VERSION">
+                     Revision:<span class="required">*</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="varchar" field="revision">
+                     <input tabindex="0" name="revision" type="text" value="1" disabled="">
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_TEMPLATE_TYPE">
+                     Document Type:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="enum" field="template_type">
+                     <select name="template_type" id="template_type" title="">
+                        <option label="" value=""></option>
+                        <option label="Mail Merge" value="mailmerge">Mail Merge</option>
+                        <option label="EULA" value="eula">EULA</option>
+                        <option label="NDA" value="nda">NDA</option>
+                        <option label="License Agreement" value="license">License Agreement</option>
+                     </select>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_IS_TEMPLATE">
+                     Template?:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="bool" field="is_template">
+                     <input type="hidden" name="is_template" value="0"> 
+                     <input type="checkbox" id="is_template" name="is_template" value="1" title="" tabindex="0">
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DOC_ACTIVE_DATE">
+                     Publish Date:<span class="required">*</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="date" field="active_date">
+                     <span class="dateTime">
+                     <input class="date_input" autocomplete="off" type="text" name="active_date" id="active_date" value="03/05/2019" title="" tabindex="0" size="11" maxlength="10">
+                     <button type="button" id="active_date_trigger" class="btn btn-danger" onclick="return false;"><span class="suitepicon suitepicon-module-calendar" alt="Enter Date"></span></button>
+                     </span>
+                     <script type="text/javascript">
+                        Calendar.setup ({
+                        inputField : "active_date",
+                        form : "EditView",
+                        ifFormat : "%m/%d/%Y %H:%M",
+                        daFormat : "%m/%d/%Y %H:%M",
+                        button : "active_date_trigger",
+                        singleClick : true,
+                        dateStr : "03/05/2019",
+                        startWeekday: 0,
+                        step : 1,
+                        weekNumbers:false
+                        }
+                        );
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DOC_EXP_DATE">
+                     Expiration Date:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="date" field="exp_date">
+                     <span class="dateTime">
+                     <input class="date_input" autocomplete="off" type="text" name="exp_date" id="exp_date" value="" title="" tabindex="0" size="11" maxlength="10">
+                     <button type="button" id="exp_date_trigger" class="btn btn-danger" onclick="return false;"><span class="suitepicon suitepicon-module-calendar" alt="Enter Date"></span></button>
+                     </span>
+                     <script type="text/javascript">
+                        Calendar.setup ({
+                        inputField : "exp_date",
+                        form : "EditView",
+                        ifFormat : "%m/%d/%Y %H:%M",
+                        daFormat : "%m/%d/%Y %H:%M",
+                        button : "exp_date_trigger",
+                        singleClick : true,
+                        dateStr : "",
+                        startWeekday: 0,
+                        step : 1,
+                        weekNumbers:false
+                        }
+                        );
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_SF_CATEGORY">
+                     Category:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="enum" field="category_id">
+                     <select name="category_id" id="category_id" title="">
+                        <option label="" value=""></option>
+                        <option label="Retail" value="Marketing">Retail</option>
+                        <option label="Entertainment" value="Knowledege Base">Entertainment</option>
+                        <option label="Sales" value="Sales">Sales</option>
+                     </select>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_SF_SUBCATEGORY">
+                     Sub Category:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="enum" field="subcategory_id">
+                     <select name="subcategory_id" id="subcategory_id" title="">
+                        <option label="" value=""></option>
+                        <option label="Marketing Collateral" value="Marketing Collateral">Marketing Collateral</option>
+                        <option label="Product Brochures" value="Product Brochures">Product Brochures</option>
+                        <option label="FAQ" value="FAQ">FAQ</option>
+                     </select>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-12 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-2 label" data-label="LBL_DESCRIPTION">
+                     Description:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="text" field="description" colspan="3">
+                     <textarea id="description" name="description" rows="6" cols="80" title="" tabindex="0"></textarea>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DET_RELATED_DOCUMENT">
+                     Related Document:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="relate" field="related_doc_name">
+                     <input tabindex="0" name="related_document_name" type="text" size="30" maxlength="255" value="" readonly=""><input tabindex="0" name="related_doc_id" type="hidden" value="">&nbsp;<input tabindex="0" title="Select" type="button" class="button" value="Select" name="btn2" onclick="open_popup(&quot;Documents&quot;, 600, 400, &quot;&quot;, true, false, {&quot;call_back_function&quot;:&quot;document_set_return&quot;,&quot;form_name&quot;:&quot;EditView&quot;,&quot;field_to_name_array&quot;:{&quot;id&quot;:&quot;related_doc_id&quot;,&quot;document_name&quot;:&quot;related_document_name&quot;}}, &quot;single&quot;, true);">
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_DET_RELATED_DOCUMENT_VERSION">
+                     Related Document Revision:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field " type="varchar" field="related_doc_rev_number">
+                     <select tabindex="0" name="related_doc_rev_id" id="related_doc_rev_id" disabled=""></select>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_ACCOUNTS_CONTACTS">
+                     Accounts:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field  yui-ac" type="relate" field="accounts_contacts_c">
+                     <input type="text" name="accounts_contacts_c" class="sqsEnabled yui-ac-input" tabindex="0" id="accounts_contacts_c" size="" value="" title="" autocomplete="off">
+                     <div id="EditView_accounts_contacts_c_results" class="yui-ac-container">
+                        <div class="yui-ac-content" style="display: none;">
+                           <div class="yui-ac-hd" style="display: none;"></div>
+                           <div class="yui-ac-bd">
+                              <ul>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                              </ul>
+                           </div>
+                           <div class="yui-ac-ft" style="display: none;"></div>
+                        </div>
+                     </div>
+                     <input type="hidden" name="account_id_c" id="account_id_c" value="">
+                     <span class="id-ff multiple">
+                     <button type="button" name="btn_accounts_contacts_c" id="btn_accounts_contacts_c" tabindex="0" title="Select Account" class="button firstChild" value="Select Account" onclick="open_popup(
+                        &quot;Accounts&quot;, 
+                        600, 
+                        400, 
+                        &quot;&quot;, 
+                        true, 
+                        false, 
+                        {&quot;call_back_function&quot;:&quot;set_return&quot;,&quot;form_name&quot;:&quot;EditView&quot;,&quot;field_to_name_array&quot;:{&quot;id&quot;:&quot;account_id_c&quot;,&quot;name&quot;:&quot;accounts_contacts_c&quot;}}, 
+                        &quot;single&quot;, 
+                        true
+                        );"><span class="suitepicon suitepicon-action-select"></span></button><button type="button" name="btn_clr_accounts_contacts_c" id="btn_clr_accounts_contacts_c" tabindex="0" title="Clear Account" class="button lastChild" onclick="SUGAR.clearRelateField(this.form, 'accounts_contacts_c', 'account_id_c');" value="Clear Account"><span class="suitepicon suitepicon-action-clear"></span></button>
+                     </span>
+                     <script type="text/javascript">
+                        SUGAR.util.doWhen(
+                        		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['EditView_accounts_contacts_c']) != 'undefined'",
+                        		enableQS
+                        );
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-4 label" data-label="LBL_PORTAL_USER">
+                     Portal User:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field  yui-ac" type="relate" field="portal_user_c">
+                     <input type="text" name="portal_user_c" class="sqsEnabled yui-ac-input" tabindex="0" id="portal_user_c" size="" value="" title="" autocomplete="off">
+                     <div id="EditView_portal_user_c_results" class="yui-ac-container">
+                        <div class="yui-ac-content" style="display: none;">
+                           <div class="yui-ac-hd" style="display: none;"></div>
+                           <div class="yui-ac-bd">
+                              <ul>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                              </ul>
+                           </div>
+                           <div class="yui-ac-ft" style="display: none;"></div>
+                        </div>
+                     </div>
+                     <input type="hidden" name="contact_id_c" id="contact_id_c" value="">
+                     <span class="id-ff multiple">
+                     <button type="button" name="btn_portal_user_c" id="btn_portal_user_c" tabindex="0" title="Select Contact" class="button firstChild" value="Select Contact" onclick="open_popup(
+                        &quot;Contacts&quot;, 
+                        600, 
+                        400, 
+                        &quot;&quot;, 
+                        true, 
+                        false, 
+                        {&quot;call_back_function&quot;:&quot;set_return&quot;,&quot;form_name&quot;:&quot;EditView&quot;,&quot;field_to_name_array&quot;:{&quot;id&quot;:&quot;contact_id_c&quot;,&quot;name&quot;:&quot;portal_user_c&quot;}}, 
+                        &quot;single&quot;, 
+                        true
+                        );"><span class="suitepicon suitepicon-action-select"></span></button><button type="button" name="btn_clr_portal_user_c" id="btn_clr_portal_user_c" tabindex="0" title="Clear Contact" class="button lastChild" onclick="SUGAR.clearRelateField(this.form, 'portal_user_c', 'contact_id_c');" value="Clear Contact"><span class="suitepicon suitepicon-action-clear"></span></button>
+                     </span>
+                     <script type="text/javascript">
+                        SUGAR.util.doWhen(
+                        		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['EditView_portal_user_c']) != 'undefined'",
+                        		enableQS
+                        );
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+               <div class="col-xs-12 col-sm-12 edit-view-row-item">
+                  <div class="col-xs-12 col-sm-2 label" data-label="LBL_ASSIGNED_TO_NAME">
+                     Assigned to:
+                  </div>
+                  <div class="col-xs-12 col-sm-8 edit-view-field  yui-ac" type="relate" field="assigned_user_name" colspan="3">
+                     <input type="text" name="assigned_user_name" class="sqsEnabled yui-ac-input" tabindex="0" id="assigned_user_name" size="" value="" title="" autocomplete="off">
+                     <div id="EditView_assigned_user_name_results" class="yui-ac-container">
+                        <div class="yui-ac-content" style="display: none;">
+                           <div class="yui-ac-hd" style="display: none;"></div>
+                           <div class="yui-ac-bd">
+                              <ul>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                                 <li style="display: none;"></li>
+                              </ul>
+                           </div>
+                           <div class="yui-ac-ft" style="display: none;"></div>
+                        </div>
+                     </div>
+                     <input type="hidden" name="assigned_user_id" id="assigned_user_id" value="">
+                     <span class="id-ff multiple">
+                     <button type="button" name="btn_assigned_user_name" id="btn_assigned_user_name" tabindex="0" title="Select User" class="button firstChild" value="Select User" onclick="open_popup(
+                        &quot;Users&quot;, 
+                        600, 
+                        400, 
+                        &quot;&quot;, 
+                        true, 
+                        false, 
+                        {&quot;call_back_function&quot;:&quot;set_return&quot;,&quot;form_name&quot;:&quot;EditView&quot;,&quot;field_to_name_array&quot;:{&quot;id&quot;:&quot;assigned_user_id&quot;,&quot;user_name&quot;:&quot;assigned_user_name&quot;}}, 
+                        &quot;single&quot;, 
+                        true
+                        );"><span class="suitepicon suitepicon-action-select"></span></button><button type="button" name="btn_clr_assigned_user_name" id="btn_clr_assigned_user_name" tabindex="0" title="Clear User" class="button lastChild" onclick="SUGAR.clearRelateField(this.form, 'assigned_user_name', 'assigned_user_id');" value="Clear User"><span class="suitepicon suitepicon-action-clear"></span></button>
+                     </span>
+                     <script type="text/javascript">
+                        SUGAR.util.doWhen(
+                        		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['EditView_assigned_user_name']) != 'undefined'",
+                        		enableQS
+                        );
+                     </script>
+                  </div>
+                  <!-- [/hide] -->
+               </div>
+               <div class="clear"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="panel panel-default">
+      <div class="panel-heading ">
+         <a class="" role="button" data-toggle="collapse-edit" aria-expanded="false">
+            <div class="col-xs-10 col-sm-11 col-md-11">
+               Contact List
+            </div>
+         </a>
+      </div>
+      <div class="panel-body panel-collapse collapse in panelContainer" id="detailpanel_0" data-id="LBL_EDITVIEW_PANEL1">
+         <div class="tab-content">
+            <!-- tab_panel_content.tpl -->
+            <div class="row edit-view-row">
+               <div class="col-xs-12 col-sm-6 edit-view-row-item"></div>
+               <div class="col-xs-12 col-sm-6 edit-view-row-item"></div>
+               <div class="clear"></div>
+               <div class="clear"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

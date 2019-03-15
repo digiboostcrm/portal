@@ -2,6 +2,10 @@
  //WARNING: The contents of this file are auto-generated
 
 
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CREATED_BY'] = 'Created By';
+
+
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -54,9 +58,5 @@ $mod_strings = array (
 	'LBL_CCUSTOM_FILE' => 'Upload File',
 );
 
-
-
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_CREATED_BY'] = 'Created By';
 
 ?>

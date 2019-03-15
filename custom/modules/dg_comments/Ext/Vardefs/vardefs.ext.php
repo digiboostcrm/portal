@@ -2,22 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-$dictionary["dg_comments"]["fields"]["status"] =array (
-	'name' => 'status',
-	'studio' => true,
-	'required' => false,
-	'vname' => 'LBL_COMMENT_STATUS',
-	'type' => 'enum',
-	'options' => 'comment_list',
-	'default_value' => 'Private',
-	'importable' => true,
-	'audited' => false,
-	'reportable' => true,
-
-);
-
- 
-
 // created: 2018-03-16 15:23:30
 $dictionary["dg_comments"]["fields"]["cases_dg_comments_1"] = array (
   'name' => 'cases_dg_comments_1',
@@ -51,4 +35,20 @@ $dictionary["dg_comments"]["fields"]["cases_dg_comments_1cases_ida"] = array (
   'vname' => 'LBL_CASES_DG_COMMENTS_1_FROM_DG_COMMENTS_TITLE',
 );
 
+
+$dictionary["dg_comments"]["fields"]["status"] =array (
+	'name' => 'status',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_COMMENT_STATUS',
+	'type' => 'enum',
+	'options' => 'comment_list',
+	'default_value' => 'Private',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+
+);
+
+ 
 ?>

@@ -2,18 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2017-11-14 16:54:05
-$dictionary["AOS_Products"]["fields"]["opportunities_aos_products_1"] = array (
-  'name' => 'opportunities_aos_products_1',
-  'type' => 'link',
-  'relationship' => 'opportunities_aos_products_1',
-  'source' => 'non-db',
-  'module' => 'Opportunities',
-  'bean_name' => 'Opportunity',
-  'vname' => 'LBL_OPPORTUNITIES_AOS_PRODUCTS_1_FROM_OPPORTUNITIES_TITLE',
-);
-
-
 // created: 2017-11-14 16:52:19
 $dictionary["AOS_Products"]["fields"]["leads_aos_products_1"] = array (
   'name' => 'leads_aos_products_1',
@@ -26,17 +14,17 @@ $dictionary["AOS_Products"]["fields"]["leads_aos_products_1"] = array (
 );
 
 
- // created: 2018-01-30 15:06:00
-$dictionary['AOS_Products']['fields']['price']['inline_edit']=true;
-$dictionary['AOS_Products']['fields']['price']['merge_filter']='disabled';
+// created: 2017-11-14 16:54:05
+$dictionary["AOS_Products"]["fields"]["opportunities_aos_products_1"] = array (
+  'name' => 'opportunities_aos_products_1',
+  'type' => 'link',
+  'relationship' => 'opportunities_aos_products_1',
+  'source' => 'non-db',
+  'module' => 'Opportunities',
+  'bean_name' => 'Opportunity',
+  'vname' => 'LBL_OPPORTUNITIES_AOS_PRODUCTS_1_FROM_OPPORTUNITIES_TITLE',
+);
 
- 
-
- // created: 2018-01-30 15:06:42
-$dictionary['AOS_Products']['fields']['one_time_price_c']['inline_edit']='1';
-$dictionary['AOS_Products']['fields']['one_time_price_c']['labelValue']='One Time Price';
-
- 
 
 $dictionary["AOS_Products"]["fields"]["qbcreatedtime_c"]= array (
 		'name' => 'qbcreatedtime_c',
@@ -103,6 +91,12 @@ $dictionary["AOS_Products"]["fields"]["qbassetaccount_c"] = array(
 
 
 
+ // created: 2018-01-30 15:06:42
+$dictionary['AOS_Products']['fields']['one_time_price_c']['inline_edit']='1';
+$dictionary['AOS_Products']['fields']['one_time_price_c']['labelValue']='One Time Price';
+
+ 
+
 
 $dictionary["AOS_Products"]["fields"]["out_sourced"] = array (
 	'studio' => true,
@@ -113,4 +107,10 @@ $dictionary["AOS_Products"]["fields"]["out_sourced"] = array (
 	'required' => false,
 );
 
+
+ // created: 2018-01-30 15:06:00
+$dictionary['AOS_Products']['fields']['price']['inline_edit']=true;
+$dictionary['AOS_Products']['fields']['price']['merge_filter']='disabled';
+
+ 
 ?>

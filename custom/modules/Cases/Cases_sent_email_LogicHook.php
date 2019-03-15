@@ -172,3 +172,4 @@ class Cases_sent_email {
 	}
 
 }
+

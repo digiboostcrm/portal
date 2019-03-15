@@ -589,15 +589,15 @@ If you are not setting up Inbound Email, please clear all fields in that section
   'LBL_SECURITYGROUPS' => 'Security Groups',
 );
 
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_RLS_RLS_SCHEDULING_REPORTS_USERS_FROM_RLS_RLS_SCHEDULING_REPORTS_TITLE'] = 'Scheduling Reports';
-$mod_strings['LBL_RLS_SCHEDULING_REPORTS_USERS_FROM_RLS_SCHEDULING_REPORTS_TITLE'] = 'Scheduling Reports';
-
-
 
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 $mod_strings['LBL_NOTIFICATION_MODULE_INFORMATION'] = 'Desktop Notification Modules';
 
+
+
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_RLS_RLS_SCHEDULING_REPORTS_USERS_FROM_RLS_RLS_SCHEDULING_REPORTS_TITLE'] = 'Scheduling Reports';
+$mod_strings['LBL_RLS_SCHEDULING_REPORTS_USERS_FROM_RLS_SCHEDULING_REPORTS_TITLE'] = 'Scheduling Reports';
 
 ?>

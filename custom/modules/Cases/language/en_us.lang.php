@@ -1,5 +1,5 @@
 <?php
-// created: 2019-01-27 16:47:07
+// created: 2019-03-14 17:25:50
 $mod_strings = array (
   'LBL_OVERVIEW' => 'OverView',
   'LNK_NEW_CASE' => 'Create Ticket',
@@ -20,4 +20,6 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL1' => 'Resolutions',
   'LBL_CHAT_DESCRIPTION_C' => 'Description',
   'LBL_SUBJECT' => 'Subject:',
+  'LBL_CUSTOM_ATTACHMENT' => 'Attachment',
+  'LBL_EDITVIEW_PANEL2' => 'New Panel 2',
 );

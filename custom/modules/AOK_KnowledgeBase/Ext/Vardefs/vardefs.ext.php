@@ -76,6 +76,12 @@ $dictionary['AOK_KnowledgeBase']['fields']['created_from_c']['duplicate_merge_do
 
  
 
+ // created: 2018-04-18 11:01:14
+$dictionary['AOK_KnowledgeBase']['fields']['kb_image_c']['inline_edit']='1';
+$dictionary['AOK_KnowledgeBase']['fields']['kb_image_c']['labelValue']='Image';
+
+ 
+
 $dictionary["AOK_KnowledgeBase"]["fields"]["video_link"] =array (
 	'name' => 'video_link',
 	'default_value' => '',
@@ -91,10 +97,4 @@ $dictionary["AOK_KnowledgeBase"]["fields"]["video_link"] =array (
 );
 
 
-
- // created: 2018-04-18 11:01:14
-$dictionary['AOK_KnowledgeBase']['fields']['kb_image_c']['inline_edit']='1';
-$dictionary['AOK_KnowledgeBase']['fields']['kb_image_c']['labelValue']='Image';
-
- 
 ?>

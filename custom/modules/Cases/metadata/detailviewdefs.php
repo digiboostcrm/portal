@@ -76,7 +76,6 @@ array (
         3 => 
         array (
           0 => 'description',
-          1 => '',
         ),
         4 => 
         array (
@@ -107,6 +106,14 @@ array (
             'name' => 'created_from_c',
             'studio' => 'visible',
             'label' => 'LBL_CREATED_FROM',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'custom_attachment_c',
+            'label' => 'LBL_CUSTOM_ATTACHMENT',
           ),
         ),
       ),
@@ -152,7 +159,6 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => '',
         ),
         4 => 
         array (

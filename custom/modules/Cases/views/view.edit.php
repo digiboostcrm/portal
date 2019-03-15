@@ -45,6 +45,7 @@ class CasesViewEdit extends ViewEdit {
 
 
 	    function display(){
+			
 		global $db;
 		global $current_user;
 		$user_id = $current_user->id;
@@ -65,13 +66,19 @@ class CasesViewEdit extends ViewEdit {
 		}
 		
 		$this->ss->assign('options_queue', $options);
-        parent::display();
+        
+        $this->bean->assigned_user_id = " ";
+		parent::display();
+        
 		
 		echo '<script>$("#created_by_name").val("'.$current_user->full_name.'");</script>';
 		$recID = $this->bean->fetched_row['id'];
 		if(empty($recID)){
 		}
 		echo '<script>$("#created_by_name").prop("readonly", true);</script>';
+		echo "<pre>";
+		print_r($this->bean->assigned_user_name);
+		echo "</pre>";
     }
 	
    

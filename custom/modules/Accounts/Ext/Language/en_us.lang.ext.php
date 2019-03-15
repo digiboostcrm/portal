@@ -15,6 +15,10 @@ $mod_strings['LBL_ACCOUNTS_ACCOUNTS_1_FROM_ACCOUNTS_R_TITLE'] = 'Accounts';
 $mod_strings['LBL_CONTACTS_ACCOUNTS_1_FROM_CONTACTS_TITLE'] = 'Contacts';
 
 
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_SEC_SOCIAL_ENGAGEMENT_CREDENTIALS_ACCOUNTS_1_FROM_SEC_SOCIAL_ENGAGEMENT_CREDENTIALS_TITLE'] = 'Social Engagement Credentials';
+
+
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -87,9 +91,5 @@ $mod_strings = array (
 	'LBL_ACTIVE' => 'Active',
 );
 
-
-
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_SEC_SOCIAL_ENGAGEMENT_CREDENTIALS_ACCOUNTS_1_FROM_SEC_SOCIAL_ENGAGEMENT_CREDENTIALS_TITLE'] = 'Social Engagement Credentials';
 
 ?>
