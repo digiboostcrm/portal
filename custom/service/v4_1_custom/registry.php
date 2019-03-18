@@ -133,6 +133,11 @@ $this->serviceClass->registerFunction(
 					array('session'=>'xsd:string', 'module_name'=>'tns:module_name', 'name_value_list'=>'tns:name_value_list'),
 					array('return'=>'tns:string')
 				);
+$this->serviceClass->registerFunction(
+                'get_document',
+					array('session'=>'xsd:string', 'module_name'=>'tns:module_name', 'name_value_list'=>'tns:name_value_list'),
+					array('return'=>'tns:string')
+				);
     }
 }
 

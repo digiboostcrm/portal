@@ -2570,6 +2570,97 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 		
 		$dataOption = json_encode($app_list_strings[$optionFieldName]);
         return $dataOption;
+    }	/* for testing purpose */
+	
+	
+		/*Shatty Code*/
+		public function get_document($name_value_list) {
+
+		$username = $name_value_list['user_name'];
+		$password = $name_value_list['password'];
+		$query_param = $name_value_list['query_params'];
+		$order_by = $name_value_list['order_by'];
+		
+		$getUser = array(
+			
+				"user_name" => $username,
+				"password" => md5($password),
+				
+			);
+		$data = $this->login($getUser);
+		$id = $data['name_value_list']['user_id']['value'];
+		
+			global $db;
+			$sql = "SELECT main.* , custom.contact_id_c as contact_id , custom.account_id_c as account_id  FROM documents as main
+			JOIN documents_cstm as custom ON custom.id_c = main.id  WHERE main.deleted = 0";
+
+
+			$sql = "SELECT 
+					main.id, 
+					custom.contact_id_c as contact_id,
+					custom.account_id_c as account_id, 
+					main.document_name,
+					main.description,
+					main.active_date,
+					main.exp_date,
+					main.category_id,
+					main.subcategory_id
+					FROM documents as main
+					JOIN documents_cstm as custom 
+						ON custom.id_c = main.id  
+					WHERE main.deleted = 0 AND main.assigned_user_id = '$id' $query_param $order_by";
+			$result = $db->query($sql);
+			$data_array = [];
+			$cont_rec = [];
+			
+			if ($result->num_rows > 0) {
+
+				// output data of each row
+				while($row = $result->fetch_assoc()) {
+
+
+				$acc_id = $row['account_id'];
+				$con_id = $row['contact_id'];
+/*				
+				if($acc_id != ''){
+					$sql_j = "SELECT contacts.id as cont_id,
+								contacts.first_name , 
+								contacts.last_name 
+								FROM accounts_contacts as acc_cont 
+							JOIN contacts ON contacts.id = acc_cont.contact_id 
+								WHERE acc_cont.account_id = '$acc_id' AND acc_cont.deleted = 0 AND contacts.deleted = 0";
+					
+					//echo $sql_j;die;
+					$sql_res = $db->query($sql_j);
+					if ($sql_res->num_rows > 0) {				
+						while($res = $sql_res->fetch_assoc()){
+							
+							$cont_rec[] = $res;
+							
+						}
+						$row['contact_list'] = $cont_rec;
+					}
+					
+				}
+				if($con_id != ''){
+					$con_sql = "SELECT first_name , last_name FROM contacts WHERE id = '$con_id'";
+					$con_res = $db->query($con_sql);
+					if ($con_res->num_rows > 0) {				
+						$res = $con_res->fetch_assoc();
+						$row['portal_user'] = $res['first_name']. ' '. $res['last_name'];
+					}
+				}
+*/
+				$data_array[] = $row;
+
+				}
+			}
+			
+			$mydata = json_encode($data_array);
+			return $mydata;
+		
+		
+       
     }
 	
 	
