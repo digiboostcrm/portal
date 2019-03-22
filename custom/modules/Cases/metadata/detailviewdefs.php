@@ -81,6 +81,21 @@ array (
         array (
           0 => 
           array (
+            'name' => 'exp_start_date',
+            'studio' => true,
+            'label' => 'LBL_START_DATE',
+          ),
+          1 => 
+          array (
+            'name' => 'exp_due_date',
+            'studio' => true,
+            'label' => 'LBL_DUE_DATE',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'chat_description_c',
             'label' => 'LBL_CHAT_DESCRIPTION_C',
             'readonly' => true,
@@ -93,7 +108,7 @@ array (
             'label' => 'LBL_SUBJECT',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -108,7 +123,7 @@ array (
             'label' => 'LBL_CREATED_FROM',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (

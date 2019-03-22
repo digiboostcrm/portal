@@ -23,6 +23,21 @@ $hook_array['after_retrieve'][] = Array(10, 'Filter HTML', 'modules/AOP_Case_Upd
 $hook_array['after_relationship_delete'] = Array(); 
 $hook_array['after_relationship_delete'][] = Array(77, 'deleteRelationship', 'modules/Cases/CasesJjwg_MapsLogicHook.php','CasesJjwg_MapsLogicHook', 'deleteRelationship'); 
 
+    $hook_array['process_record'][] = Array(
+        //Processing index. For sorting the array.
+        1,
 
+        //Label. A string value to identify the hook.
+        'process_record example',
+
+        //The PHP file where your class is located.
+        'custom/modules/Cases/process_record_class.php',
+
+        //The class the method is in.
+        'process_record_class',
+
+        //The method to call.
+        'process_record_method'
+    );
 
 ?>

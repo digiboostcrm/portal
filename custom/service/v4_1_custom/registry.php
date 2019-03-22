@@ -82,11 +82,13 @@ $this->serviceClass->registerFunction(
 					array('session'=>'xsd:string','module_name'=>'tns:module_name', 'name_value_list'=>'tns:name_value_list'),
 					array('return'=>'tns:string')
 				);
+/*
 $this->serviceClass->registerFunction(
                 'get_ticket_data',
 					array('session'=>'xsd:string', 'ticket_id'=>'tns:ticket_id'),
 					array('return'=>'tns:string')
-				);		
+				);	
+*/				
 $this->serviceClass->registerFunction(
                 'add_ticket',
 					array('session'=>'xsd:string', 'module_name'=>'tns:module_name', 'name_value_list'=>'tns:name_value_list'),
@@ -135,7 +137,12 @@ $this->serviceClass->registerFunction(
 				);
 $this->serviceClass->registerFunction(
                 'get_document',
-					array('session'=>'xsd:string', 'module_name'=>'tns:module_name', 'name_value_list'=>'tns:name_value_list'),
+					array('name_value_list'=>'tns:name_value_list'),
+					array('return'=>'tns:string')
+				);
+$this->serviceClass->registerFunction(
+                'get_ticket_data',
+					array('name_value_list'=>'tns:name_value_list'),
 					array('return'=>'tns:string')
 				);
     }

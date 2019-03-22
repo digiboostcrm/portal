@@ -1987,42 +1987,72 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 
     }
 	
-	public function get_ticket_data($session, $ticketID) {
-		     /*	
-        if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session', '', '', '', $error)) {
-            $GLOBALS['log']->info('End: SugarWebServiceImplv4_1_custom->set_resume.');
-            return false;
-        }
-            */
+	public function get_ticket_data($name_value_list) {
+
+			$where = '';
+			$username = $name_value_list['user_name'];
+			$password = $name_value_list['password'];
+			$ticketID = $name_value_list['ticketID'];
+			$order_by = $name_value_list['order_by'];
+			$condition = $name_value_list['condition'];
+			
+			$getUser = array(
+			
+				"user_name" => $username,
+				"password" => md5($password),
+				
+			);
+			$data = $this->login($getUser);
+			$user_rec_id  = $data['id'];
+			$user_id = '';
+			if($user_rec_id){
+				$user_id = $data['name_value_list']['user_id']['value'];
+				if(!empty($user_id)){				
+					//$where .= " AND assigned_user_id = '$user_id' ";
+				}
+			}else{
+				
+				return "Login Details Invalid ! ";
+			}
+		
+		
+			if(!empty($ticketID)){
+				$condition = " AND id = '$ticketID' "; 
+			}
+			if(!empty($order_by)){
+				$order_by = " ORDER BY $order_by";
+			}
+		
 		global $db;
-		$sql = "SELECT caseUpdates.*, users.first_name as FirstName, users.last_name as LastName FROM aop_case_updates as caseUpdates 
+		$sql = "SELECT caseUpdates.*, users.first_name as FirstName, users.last_name as LastName 
+					FROM aop_case_updates as caseUpdates 
 				JOIN users ON users.id = caseUpdates.assigned_user_id
 				Where caseUpdates.case_id = '$ticketID' ORDER BY caseUpdates.date_entered ASC" ;
-				
+
 		$resultQuery = $db->query($sql);
-		while($result = $db->fetchByAssoc($resultQuery)){
-			$casesUpdates[] = $result;
+		while($resultUp = $db->fetchByAssoc($resultQuery)){
+			$casesUpdates[] = $resultUp;
 		}
 		
-		$ticketBean = BeanFactory::getBean('Cases',$ticketID);
-		return json_encode(
-					array('name' => $ticketBean->name,
-						'subject'=> $ticketBean->subject,
-						'category'=> $ticketBean->category,					
-						'description'=> $ticketBean->description,
-						'date_entered' => $ticketBean->date_entered,
-						'case_number' => $ticketBean->case_number,
-						'status'=> $ticketBean->status,
-						'type' => $ticketBean->type,
-						'priority' => $ticketBean->priority,
-						'resolution' => $ticketBean->resolution,
-						'state' => $ticketBean->state, 
-						'assigned_user_id' => $ticketBean->assigned_user_id, 
-						'assigned_user_name' => $ticketBean->assigned_user_name,
-						'cases_Updates_content' => $casesUpdates
-						)
-					);
+		$sqlCase = "SELECT name, subject, category, description, 
+						date_entered, case_number, status, type, priority, resolution,  state, assigned_user_id
+						FROM cases WHERE deleted = 0 $condition  $order_by" ;
 		
+		$sqlRes = $db->query($sqlCase);
+		
+		$result['Num_Of_Records'] = $sqlRes->num_rows;
+		if($sqlRes->num_rows > 0){
+			while ($data_case = $db->fetchByAssoc($sqlRes)){
+				
+				$resultCaseQuery[] = $data_case;
+				
+			}
+			
+		}
+			$result['ticket_data'] = $resultCaseQuery;
+			$result['case_updates'] = $casesUpdates;
+		
+		return json_encode($result);
 
     }
 

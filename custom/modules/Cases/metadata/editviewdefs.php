@@ -97,6 +97,32 @@ array (
         array (
           0 => 
           array (
+            'name' => 'start_date',
+            'studio' => true,
+            'label' => 'LBL_START_DATE',
+          ),
+          1 => 
+          array (
+            'name' => 'end_date',
+            'studio' => true,
+            'label' => 'LBL_DUE_DATE',
+          ),
+        ),
+        8 => 
+        array (
+			0 => 
+			  array (
+				'name' => 'spent_hours',
+			  ),
+			1 => 
+			  array (
+				
+			  ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'chat_description_c',
             'studio' => 'visible',
             'label' => 'LBL_CHAT_DESCRIPTION_C',
@@ -109,7 +135,7 @@ array (
             ),
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 'created_by_name',
           1 => 
@@ -119,13 +145,14 @@ array (
             'label' => 'LBL_CREATED_FROM',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
             'name' => 'custom_attachment_c',
             'label' => 'LBL_CUSTOM_ATTACHMENT',
           ),
+
         ),
       ),
       'lbl_editview_panel1' => 
