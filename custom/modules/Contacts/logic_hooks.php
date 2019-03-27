@@ -14,7 +14,9 @@ $hook_array['after_save'] = Array();
 $hook_array['after_save'][] = Array(1, 'Update Portal', 'modules/Contacts/updatePortal.php','updatePortal', 'updateUser'); 
 $hook_array['after_save'][] = Array(77, 'updateRelatedMeetingsGeocodeInfo', 'modules/Contacts/ContactsJjwg_MapsLogicHook.php','ContactsJjwg_MapsLogicHook', 'updateRelatedMeetingsGeocodeInfo'); 
 $hook_array['after_ui_frame'] = Array(); 
-$hook_array['after_ui_frame'][] = Array(200, 'Include javascript files for Survey', 'custom/modules/Contacts/custom_Portallogic.php','custom_Portallogic', 'includeJSFile'); 
+$hook_array['after_ui_frame'][] = Array(200, 'Include javascript files for Survey', 'custom/include/custom_Portallogic.php','custom_Portallogic', 'includeJSFile'); 
+$hook_array['before_delete'] = Array(); 
+$hook_array['before_delete'][] = Array(100, 'Save record data on db operation ', 'custom/include/ActivityLog.php','ActivityLog', 'save_deleted_data'); 
 
 
 

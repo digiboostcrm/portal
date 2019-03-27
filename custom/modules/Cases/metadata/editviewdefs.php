@@ -33,11 +33,20 @@ array (
         array (
           'file' => 'include/javascript/qtip/jquery.qtip.min.js',
         ),
+        3 => 
+        array (
+          'file' => 'custom/modules/Cases/js/validation_state.js',
+        ),
       ),
       'useTabs' => false,
       'tabDefs' => 
       array (
         'LBL_CASE_INFORMATION' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+        'LBL_EDITVIEW_PANEL2' => 
         array (
           'newTab' => false,
           'panelDefault' => 'expanded',
@@ -51,6 +60,11 @@ array (
       'form' => 
       array (
         'enctype' => 'multipart/form-data',
+		'buttons' => 
+        array (
+          0 => array('customCode' => '<input title="Save" accesskey="a" class="button primary" onclick="var _form = document.getElementById(\'EditView\'); _form.action.value=\'Save\'; if( check_form(\'EditView\'),  check_state())SUGAR.ajaxUI.submitForm(_form);return false;" type="submit" name="button" value="Save" id="SAVE">'),
+          1 => 'CANCEL',
+        ),
       ),
       'syncDetailEditViews' => true,
     ),
@@ -62,12 +76,23 @@ array (
         array (
           0 => 
           array (
-            'name' => 'case_number',
-            'type' => 'readonly',
+            'name' => 'subject',
+            'displayParams' => 
+            array (
+            ),
           ),
           1 => 'priority',
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'case_number',
+            'type' => 'readonly',
+          ),
+          1 => 'account_name',
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -77,15 +102,6 @@ array (
           ),
           1 => 'status',
         ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'queue',
-            'customCode' => '<select name="queue" id="queue">{$options_queue}</select>',
-          ),
-          1 => 'account_name',
-        ),
         3 => 
         array (
           0 => 
@@ -94,6 +110,84 @@ array (
           ),
         ),
         4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'queue',
+            'customCode' => '<select name="queue" id="queue">{$options_queue}</select>',
+          ),
+          1 => 'assigned_user_name',
+        ),
+        5 => 
+        array (
+          0 => 'created_by_name',
+          1 => 
+          array (
+            'name' => 'created_from_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CREATED_FROM',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'category',
+            'label' => 'LBL_CATEGORY',
+          ),
+          1 => 
+          array (
+            'name' => 'custom_attachment_c',
+            'label' => 'LBL_CUSTOM_ATTACHMENT',
+          ),
+        ),
+      ),
+      'lbl_editview_panel2' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'internal',
+            'studio' => 'visible',
+            'label' => 'LBL_INTERNAL',
+          ),
+          1 => 
+          array (
+            'name' => 'update_attachment_c',
+            'label' => 'LBL_UPDATE_ATTACHMENT',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'update_text',
+            'studio' => 'visible',
+            'label' => 'LBL_UPDATE_TEXT',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'aop_case_updates_threaded',
+            'studio' => 'visible',
+            'label' => 'LBL_AOP_CASE_UPDATES_THREADED',
+          ),
+        ),
+      ),
+      'lbl_editview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'resolution',
+            'nl2br' => true,
+          ),
+        ),
+        1 => 
         array (
           0 => 
           array (
@@ -108,108 +202,21 @@ array (
             'label' => 'LBL_DUE_DATE',
           ),
         ),
-        8 => 
+        2 => 
         array (
-			0 => 
-			  array (
-				'name' => 'spent_hours',
-			  ),
-			1 => 
-			  array (
-				
-			  ),
+          0 => 
+          array (
+            'name' => 'spent_hours',
+          ),
+          1 => '',
         ),
-        5 => 
+        3 => 
         array (
           0 => 
           array (
             'name' => 'chat_description_c',
             'studio' => 'visible',
             'label' => 'LBL_CHAT_DESCRIPTION_C',
-          ),
-          1 => 
-          array (
-            'name' => 'subject',
-            'displayParams' => 
-            array (
-            ),
-          ),
-        ),
-        6 => 
-        array (
-          0 => 'created_by_name',
-          1 => 
-          array (
-            'name' => 'created_from_c',
-            'studio' => 'visible',
-            'label' => 'LBL_CREATED_FROM',
-          ),
-        ),
-        7 => 
-        array (
-          0 => 
-          array (
-            'name' => 'custom_attachment_c',
-            'label' => 'LBL_CUSTOM_ATTACHMENT',
-          ),
-
-        ),
-      ),
-      'lbl_editview_panel1' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'resolution',
-            'nl2br' => true,
-          ),
-          1 => 
-          array (
-            'name' => 'category',
-            'label' => 'LBL_CATEGORY',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'internal',
-            'studio' => 'visible',
-            'label' => 'LBL_INTERNAL',
-          ),
-          1 => 
-          array (
-            'name' => 'update_attachment_c',
-            'label' => 'LBL_UPDATE_ATTACHMENT',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'update_text',
-            'studio' => 'visible',
-            'label' => 'LBL_UPDATE_TEXT',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 'assigned_user_name',
-        ),
-        4 => 
-        array (
-          0 => 
-          array (
-            'name' => 'aop_case_updates_threaded',
-            'studio' => 'visible',
-            'label' => 'LBL_AOP_CASE_UPDATES_THREADED',
-          ),
-          1 => 
-          array (
-            'name' => 'case_attachments_display',
-            'studio' => 'visible',
-            'label' => 'LBL_CASE_ATTACHMENTS_DISPLAY',
           ),
         ),
       ),

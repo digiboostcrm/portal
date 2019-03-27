@@ -37,6 +37,11 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
+        'LBL_EDITVIEW_PANEL2' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
         'LBL_EDITVIEW_PANEL1' => 
         array (
           'newTab' => false,
@@ -53,12 +58,22 @@ array (
         array (
           0 => 
           array (
-            'name' => 'case_number',
-            'label' => 'LBL_CASE_NUMBER',
+            'name' => 'subject',
+            'studio' => true,
+            'label' => 'LBL_SUBJECT',
           ),
           1 => 'priority',
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'case_number',
+            'label' => 'LBL_CASE_NUMBER',
+          ),
+          1 => 'account_name',
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -68,47 +83,20 @@ array (
           ),
           1 => 'status',
         ),
-        2 => 
-        array (
-          0 => 'queue',
-          1 => 'account_name',
-        ),
         3 => 
         array (
           0 => 'description',
         ),
         4 => 
         array (
-          0 => 
-          array (
-            'name' => 'exp_start_date',
-            'studio' => true,
-            'label' => 'LBL_START_DATE',
-          ),
+          0 => 'queue',
           1 => 
           array (
-            'name' => 'exp_due_date',
-            'studio' => true,
-            'label' => 'LBL_DUE_DATE',
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
           ),
         ),
         5 => 
-        array (
-          0 => 
-          array (
-            'name' => 'chat_description_c',
-            'label' => 'LBL_CHAT_DESCRIPTION_C',
-            'readonly' => true,
-            'inline_edit' => false,
-          ),
-          1 => 
-          array (
-            'name' => 'subject',
-            'studio' => true,
-            'label' => 'LBL_SUBJECT',
-          ),
-        ),
-        6 => 
         array (
           0 => 
           array (
@@ -123,28 +111,24 @@ array (
             'label' => 'LBL_CREATED_FROM',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
+          array (
+            'name' => 'category',
+            'studio' => true,
+            'label' => 'LBL_CATEGORY',
+          ),
+          1 => 
           array (
             'name' => 'custom_attachment_c',
             'label' => 'LBL_CUSTOM_ATTACHMENT',
           ),
         ),
       ),
-      'lbl_editview_panel1' => 
+      'lbl_editview_panel2' => 
       array (
         0 => 
-        array (
-          0 => 'resolution',
-          1 => 
-          array (
-            'name' => 'category',
-            'studio' => true,
-            'label' => 'LBL_CATEGORY',
-          ),
-        ),
-        1 => 
         array (
           0 => 
           array (
@@ -158,7 +142,7 @@ array (
             'label' => 'LBL_UPDATE_ATTACHMENT',
           ),
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -167,15 +151,7 @@ array (
             'label' => 'LBL_UPDATE_TEXT',
           ),
         ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO',
-          ),
-        ),
-        4 => 
+        2 => 
         array (
           0 => 
           array (
@@ -183,11 +159,47 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_AOP_CASE_UPDATES_THREADED',
           ),
+        ),
+      ),
+      'lbl_editview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 'resolution',
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'start_date',
+            'studio' => true,
+            'label' => 'LBL_START_DATE',
+          ),
           1 => 
           array (
-            'name' => 'case_attachments_display',
-            'studio' => 'visible',
-            'label' => 'LBL_CASE_ATTACHMENTS_DISPLAY',
+            'name' => 'end_date',
+            'studio' => true,
+            'label' => 'LBL_DUE_DATE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spent_hours',
+            'studio' => true,
+            'label' => 'LBL_SPENT_HOURS',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'chat_description_c',
+            'label' => 'LBL_CHAT_DESCRIPTION_C',
+            'readonly' => true,
+            'inline_edit' => false,
           ),
         ),
       ),

@@ -67,18 +67,18 @@ class CasesViewEdit extends ViewEdit {
 		
 		$this->ss->assign('options_queue', $options);
         
-        $this->bean->assigned_user_id = " ";
-		parent::display();
-        
+		if(!$this->bean->id){			
+			$this->bean->assigned_user_id = " ";
+			$this->bean->created_by_name = $current_user->full_name;
+		}
 		
-		echo '<script>$("#created_by_name").val("'.$current_user->full_name.'");</script>';
+		parent::display();
+		echo '<script type="text/javascript" src="custom/modules/Cases/js/validation_state.js"></script>';
+		//echo '<script>$("#created_by_name").val("'.$current_user->full_name.'");</script>';
 		$recID = $this->bean->fetched_row['id'];
 		if(empty($recID)){
 		}
 		echo '<script>$("#created_by_name").prop("readonly", true);</script>';
-		echo "<pre>";
-		print_r($this->bean->assigned_user_name);
-		echo "</pre>";
     }
 	
    

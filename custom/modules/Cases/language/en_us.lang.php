@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-14 17:25:50
+// created: 2019-03-25 19:18:35
 $mod_strings = array (
   'LBL_OVERVIEW' => 'OverView',
   'LNK_NEW_CASE' => 'Create Ticket',
@@ -12,7 +12,7 @@ $mod_strings = array (
   'LBL_ASSIGNED_TO_NAME' => 'Assigned To',
   'LBL_LIST_NUMBER' => 'Ticket Number',
   'LBL_NUMBER' => 'Ticket Number:',
-  'LBL_UPDATE_ATTACHMENT' => 'update attachment',
+  'LBL_UPDATE_ATTACHMENT' => 'Attachment',
   'LBL_CREATED_BY_NAME' => 'Created by',
   'LBL_QUEUE' => 'Queue',
   'LBL_CATEGORY' => 'Category',
@@ -20,6 +20,9 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL1' => 'Resolutions',
   'LBL_CHAT_DESCRIPTION_C' => 'Description',
   'LBL_SUBJECT' => 'Subject:',
-  'LBL_CUSTOM_ATTACHMENT' => 'Attachment',
-  'LBL_EDITVIEW_PANEL2' => 'New Panel 2',
+  'LBL_CUSTOM_ATTACHMENT' => 'Case Attachment',
+  'LBL_EDITVIEW_PANEL2' => 'Updates',
+  'LBL_PRIORITY' => 'Priority:',
+  'LBL_UPDATE_TEXT' => 'Update  Text',
+  'LBL_AOP_CASE_UPDATES_THREADED' => ' Updates Threaded',
 );

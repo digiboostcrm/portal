@@ -10,6 +10,7 @@ $hook_array['before_save'][] = Array(10, 'Save case updates', 'modules/AOP_Case_
 $hook_array['before_save'][] = Array(11, 'Save case events', 'modules/AOP_Case_Events/CaseEventsHook.php','CaseEventsHook', 'saveUpdate'); 
 $hook_array['before_save'][] = Array(12, 'Case closure prep', 'modules/AOP_Case_Updates/CaseUpdatesHook.php','CaseUpdatesHook', 'closureNotifyPrep'); 
 $hook_array['before_save'][] = Array(77, 'updateGeocodeInfo', 'modules/Cases/CasesJjwg_MapsLogicHook.php','CasesJjwg_MapsLogicHook', 'updateGeocodeInfo'); 
+//$hook_array['before_save'][] = Array(100, 'add ticket name ', 'custom/modules/Cases/validations.php','Validations', 'add_ticket_name'); 
 $hook_array['after_save'] = Array(); 
 $hook_array['after_save'][] = Array(10, 'Send contact case closure email', 'modules/AOP_Case_Updates/CaseUpdatesHook.php','CaseUpdatesHook', 'closureNotify'); 
 $hook_array['after_save'][] = Array(77, 'updateRelatedMeetingsGeocodeInfo', 'modules/Cases/CasesJjwg_MapsLogicHook.php','CasesJjwg_MapsLogicHook', 'updateRelatedMeetingsGeocodeInfo'); 
@@ -23,21 +24,6 @@ $hook_array['after_retrieve'][] = Array(10, 'Filter HTML', 'modules/AOP_Case_Upd
 $hook_array['after_relationship_delete'] = Array(); 
 $hook_array['after_relationship_delete'][] = Array(77, 'deleteRelationship', 'modules/Cases/CasesJjwg_MapsLogicHook.php','CasesJjwg_MapsLogicHook', 'deleteRelationship'); 
 
-    $hook_array['process_record'][] = Array(
-        //Processing index. For sorting the array.
-        1,
-
-        //Label. A string value to identify the hook.
-        'process_record example',
-
-        //The PHP file where your class is located.
-        'custom/modules/Cases/process_record_class.php',
-
-        //The class the method is in.
-        'process_record_class',
-
-        //The method to call.
-        'process_record_method'
-    );
+    $hook_array['process_record'][] = Array(1,'highlighting piriorties','custom/modules/Cases/highlight_pirioity.php','HighLightPriority','highlght');
 
 ?>

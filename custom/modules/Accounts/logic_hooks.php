@@ -17,7 +17,13 @@ $hook_array['after_relationship_add'] = Array();
 $hook_array['after_relationship_add'][] = Array(77, 'addRelationship', 'modules/Accounts/AccountsJjwg_MapsLogicHook.php','AccountsJjwg_MapsLogicHook', 'addRelationship'); 
 $hook_array['after_relationship_delete'] = Array(); 
 $hook_array['after_relationship_delete'][] = Array(77, 'deleteRelationship', 'modules/Accounts/AccountsJjwg_MapsLogicHook.php','AccountsJjwg_MapsLogicHook', 'deleteRelationship'); 
-
-
+$hook_array['process_record'][] = Array(
+        //Processing index. For sorting the array.
+			1,'process_record example','custom/modules/Accounts/AccountsNumber_LogicHook.php','AccountsNumber_LogicHook', 'process_record'
+		
+		); 
+//$hook_array['after_relationship_delete'][] = Array(178, 'add data into custom table', 'custom/modules/Accounts/save_record_data.php','AccountData', 'save_deleted_data'); 
+$hook_array['before_delete'] = Array(); 
+$hook_array['before_delete'][] = Array(178, 'Save record data on db operation ', 'custom/include/ActivityLog.php','ActivityLog', 'save_deleted_data'); 
 
 ?>

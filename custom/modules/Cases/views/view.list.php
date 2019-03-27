@@ -11,7 +11,8 @@ class CasesViewList extends ViewList {
 		global $db;
 		global $current_user;
 		$user_id = $current_user->id;
-		$roleID = $_REQUEST['roleID'];
+		//$roleID = $_REQUEST['roleID'];
+		$roleID = '123';
 		$sql = 'SELECT id, name FROM acl_roles WHERE deleted = 0';
 		$res = $db->query($sql);
 		$options = "<option value=''>All Ticket</option>";
@@ -20,7 +21,6 @@ class CasesViewList extends ViewList {
 			$id = $result['id'];
 			$name = $result['name'];
 			$selected = "";
-			$rec_id = $_REQUEST['id'];
 			if($name == $roleID){ 
 				$selected = "selected";
 			}
@@ -30,7 +30,7 @@ class CasesViewList extends ViewList {
 		echo $button;
 		
 		parent :: display();
-		
+		echo "<link rel='stylesheet' type='text/css' href='custom/modules/Cases/css/piriorty_style.css'>";
 		echo '<script>
 			$( "#roleID" ).change(function() {
 				var role_id = $(this).val();

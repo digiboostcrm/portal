@@ -7,10 +7,9 @@ class Cases_sent_email {
 
     function sentEmail(&$bean, $event, $arguments) {
 		
-		if(empty($bean->subject)){
-			$bean->subject = $bean->name;
-			$bean->save();
-			return;
+		if(empty($bean->name)){
+			$bean->name = $bean->subject;
+			
 		}
 		
 		if(empty($bean->account_id)){

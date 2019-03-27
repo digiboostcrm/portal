@@ -11,5 +11,5 @@
  */ 
 $mod_strings['LBL_DUE_DATE'] = 'End Date';
 $mod_strings['LBL_START_DATE'] = 'Start Date';
-$mod_strings['LBL_SPENT_HOURS'] = 'Total Spent Hours';
+$mod_strings['LBL_SPENT_HOURS'] = 'Minutes Worked';
 

@@ -1,0 +1,39 @@
+
+.btn-med {
+	text-align:center;
+	color: white; 
+	background-color: #b5b511f0;
+	border-color: #29611e;
+}
+
+.btn-med:hover {
+  color: white;
+  background-color: #7b7b15f0;
+  border-color: #29611e;
+}
+
+.btn-low {
+	text-align:center;
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
+}
+
+.btn-low:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn-high {
+	text-align:center;
+	color: #fff;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+.btn-high:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
