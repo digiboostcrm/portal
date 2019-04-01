@@ -8,6 +8,7 @@ $hook_array['before_save'] = Array();
 $hook_array['before_save'][] = Array(77, 'updateGeocodeInfo', 'modules/Accounts/AccountsJjwg_MapsLogicHook.php','AccountsJjwg_MapsLogicHook', 'updateGeocodeInfo'); 
 $hook_array['before_save'][] = Array(81, 'update account number', 'custom/modules/Accounts/AccountsNumber_LogicHook.php','AccountsNumber_LogicHook', 'accountNumber'); 
 $hook_array['before_save'][] = Array(82, 'SendEmailAuto',  'custom/modules/Accounts/AccountsNumber_LogicHook.php','AccountsNumber_LogicHook', 'autoEmailSent'); 
+$hook_array['before_save'][] = Array(206, 'Save record data on db operation ', 'custom/include/ActivityLog.php','ActivityLog', 'save_activity_data'); 
 $hook_array['after_save'] = Array(); 
 $hook_array['after_save'][] = Array(77, 'updateRelatedMeetingsGeocodeInfo', 'modules/Accounts/AccountsJjwg_MapsLogicHook.php','AccountsJjwg_MapsLogicHook', 'updateRelatedMeetingsGeocodeInfo'); 
 $hook_array['after_save'][] = Array(78, 'updateRelatedProjectGeocodeInfo', 'modules/Accounts/AccountsJjwg_MapsLogicHook.php','AccountsJjwg_MapsLogicHook', 'updateRelatedProjectGeocodeInfo'); 
@@ -24,6 +25,6 @@ $hook_array['process_record'][] = Array(
 		); 
 //$hook_array['after_relationship_delete'][] = Array(178, 'add data into custom table', 'custom/modules/Accounts/save_record_data.php','AccountData', 'save_deleted_data'); 
 $hook_array['before_delete'] = Array(); 
-$hook_array['before_delete'][] = Array(178, 'Save record data on db operation ', 'custom/include/ActivityLog.php','ActivityLog', 'save_deleted_data'); 
+$hook_array['before_delete'][] = Array(178, 'Save record data on db operation ', 'custom/include/ActivityLog.php','ActivityLog', 'save_activity_data'); 
 
 ?>

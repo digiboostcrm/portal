@@ -48,4 +48,22 @@ Class AccountsNumber_LogicHook{
 		}
 	}
 	
+	function process_record($bean, $event, $arguments){
+			
+		if($bean->account_status_c == 'active'){
+			$bean->account_status_c = '<div style="color: white; background-color: red;"> Active </div>';
+		}
+		if($bean->account_status_c == 'inactive'){
+			$bean->account_status_c = '<div style="color: white; background-color: green;" > In Active </div>';
+		}
+
+		
+	}
+	
+	
+	
 }
+
+?>
+
+
