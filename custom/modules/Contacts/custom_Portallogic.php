@@ -181,7 +181,10 @@ if(empty($bean->register_from_c)){
     }
 
     function sendMailtoUser(&$bean, $event, $arguments) {
+		//$bean->enable_portal_c = 1;
+
 		if((empty($bean->fetched_row['is_mail_sent']) && !empty($bean->account_id) && !empty($bean->enable_portal_c) && !empty($bean->username_c) && empty($bean->password_c)) || $_REQUEST['frm_convert']) {
+		//if((empty($bean->fetched_row['is_mail_sent']) && !empty($bean->account_id) && !empty($bean->enable_portal_c) && empty($bean->username_c) && empty($bean->password_c)) || $_REQUEST['frm_convert']) {
 			$bean->is_mail_sent = 1;
 			$sPassword = $this->generatePassword();
 			/*password convert into sh512*/
@@ -213,20 +216,29 @@ if(empty($bean->register_from_c)){
 					"subject" => $emailSubjectName,
 					"body_html" => $emailtemplateObj->body_html,
 					"body" => $emailtemplateObj->body), $email_module, $bean, $macro_nv);
-				$emailBody = $template_data["body_html"];
+				$emailBody = htmlspecialchars_decode($template_data["body_html"]);
 				$mailSubject = $template_data["subject"];
+				
+				//print_r(htmlspecialchars_decode($emailBody));
 				$GLOBALS['log']->fatal('This is the $emailBody : --- ', print_r($emailBody, 1));
 				$emailSubject = $mailSubject;
 
 				$to_Email = $bean->email1;
 				require_once 'custom/biz/function/default_portal_module.php';
+				
+				require_once('custom/DigiboostMailer/DigiboostMailer.php');
 				$sendMail = CustomSendEmailPortal($to_Email, $emailSubject, $emailBody, $bean->id, $email_module); // send username password email
 				$GLOBALS['log']->fatal("Username and Password sent mail status : " . print_r($sendMail, 1));
+				
 				return $sendMail;
-			} else {
+			}
+			
+			 else {
 				$GLOBALS['log']->fatal('EMAIL TEMPLATE NOT FOUND FOR Username and Password mail SENDING');
 			}
+			
 		}
+		
 	}
 	
 	

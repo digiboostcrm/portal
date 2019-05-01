@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-25 19:18:35
+// created: 2019-04-18 18:22:07
 $mod_strings = array (
   'LBL_OVERVIEW' => 'OverView',
   'LNK_NEW_CASE' => 'Create Ticket',
@@ -25,4 +25,5 @@ $mod_strings = array (
   'LBL_PRIORITY' => 'Priority:',
   'LBL_UPDATE_TEXT' => 'Update  Text',
   'LBL_AOP_CASE_UPDATES_THREADED' => ' Updates Threaded',
+  'LBL_STATUS' => 'Status:',
 );

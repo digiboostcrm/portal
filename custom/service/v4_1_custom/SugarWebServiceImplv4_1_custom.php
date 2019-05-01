@@ -2086,6 +2086,7 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 		}
 		$bean->account_id = $accID;
 		$bean->name = $bean->subject;
+		$bean->assigned_user_id = ' ';
 		$bean->save();
 		
 		return (array('id' => $bean->id, 'entry_list' => $name_value_list));

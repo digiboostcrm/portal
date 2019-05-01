@@ -1,8 +1,8 @@
 <?php
- // created: 2019-01-03 21:04:31
+ // created: 2019-04-11 20:43:15
 $dictionary['Case']['fields']['category']['name']='category';
 $dictionary['Case']['fields']['category']['studio']=true;
-$dictionary['Case']['fields']['category']['required']=false;
+$dictionary['Case']['fields']['category']['required']=true;
 $dictionary['Case']['fields']['category']['vname']='LBL_CATEGORY';
 $dictionary['Case']['fields']['category']['type']='enum';
 $dictionary['Case']['fields']['category']['options']='dom_ticket_category';

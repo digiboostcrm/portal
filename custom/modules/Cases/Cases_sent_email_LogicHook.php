@@ -7,11 +7,6 @@ class Cases_sent_email {
 
     function sentEmail(&$bean, $event, $arguments) {
 		
-		if(empty($bean->name)){
-			$bean->name = $bean->subject;
-			
-		}
-		
 		if(empty($bean->account_id)){
 			return;
 		}
@@ -48,7 +43,8 @@ class Cases_sent_email {
 			}
 			//Send email to user
 			$sSubject = "Digiboost - Ticket #{$aRow['case_number']}"; 
-			
+			$GLOBALS['log']->fatal("email send to 06");
+			$GLOBALS['log']->fatal($oAccBean->email1);
 			$oDigiMailer->sendEmail($sTemplate, $aUserTemplateVars, $sSubject, array(
 				$oAccBean->email1
 			));
@@ -89,6 +85,8 @@ class Cases_sent_email {
 		if(!empty($bean->assigned_user_id) && $bean->fetched_row['assigned_user_id'] != $bean->assigned_user_id){
 			//Seems ticket is assigned to a CRM user
 			$oUserBean = BeanFactory::getBean('Users', $bean->assigned_user_id);
+			$GLOBALS['log']->fatal("email sent to 05");
+			$GLOBALS['log']->fatal($oAccBean->email1);
 			$oDigiMailer->sendEmail('tickets/assigned/digiboost.txt', array(
 				'name' => "{$oUserBean->first_name} {$oUserBean->last_name}",
 				'customer_name' => $oAccBean->name,
@@ -109,6 +107,8 @@ class Cases_sent_email {
 				//Seems the ticket is assigned
 				if(!empty($bean->assigned_user_id)){
 					$oUserBean = BeanFactory::getBean('Users', $bean->assigned_user_id);
+					$GLOBALS['log']->fatal("2");
+					$GLOBALS['log']->fatal($oAccBean->email1);
 					$oDigiMailer->sendEmail('tickets/assigned/customer.txt', array(
 						'customer_name' => $oAccBean->name,
 						'case_number' => $bean->case_number,
@@ -121,6 +121,8 @@ class Cases_sent_email {
 			}elseif($bean->status == 'Closed_Closed'){
 				if(!empty($current_user->id) && $current_user->id !== $bean->account_id){
 					//Seems the ticket is closed
+					$GLOBALS['log']->fatal("03");
+					$GLOBALS['log']->fatal($oAccBean->email1);
 					$oDigiMailer->sendEmail('tickets/close/customer.txt', array(
 						'customer_name' => $oAccBean->name,
 						'case_number' => $bean->case_number,
@@ -131,7 +133,9 @@ class Cases_sent_email {
 				}
 				return;
 			}
-			
+			$GLOBALS['log']->fatal("04 email sent ");
+			$GLOBALS['log']->fatal($oAccBean->email1);
+
 			$oDigiMailer->sendEmail('tickets/status/customer.txt', array(
 				'customer_name' => $oAccBean->name,
 				'case_number' => $bean->case_number,

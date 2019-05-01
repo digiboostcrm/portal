@@ -12,4 +12,6 @@
 $mod_strings['LBL_DUE_DATE'] = 'End Date';
 $mod_strings['LBL_START_DATE'] = 'Start Date';
 $mod_strings['LBL_SPENT_HOURS'] = 'Minutes Worked';
+$mod_strings['LBL_SPENT_MINUTS'] = 'Total Minutes for Ticket';
+$mod_strings['LBL_TIME_CATEGORY'] = 'Time Category';
 

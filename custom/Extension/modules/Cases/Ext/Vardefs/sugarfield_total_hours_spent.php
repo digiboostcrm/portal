@@ -2,7 +2,7 @@
 $dictionary['Case']['fields']['spent_hours'] = array(
 	'name' => 'spent_hours',
 	'studio' => true,
-	'required' => false,
+	'required' => true,
 	'vname' => 'LBL_SPENT_HOURS',
 	'type' => 'int',
 	'default_value' => '',

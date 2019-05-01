@@ -10,6 +10,7 @@ $hook_array['before_save'][] = Array(10, 'Save case updates', 'modules/AOP_Case_
 $hook_array['before_save'][] = Array(11, 'Save case events', 'modules/AOP_Case_Events/CaseEventsHook.php','CaseEventsHook', 'saveUpdate'); 
 $hook_array['before_save'][] = Array(12, 'Case closure prep', 'modules/AOP_Case_Updates/CaseUpdatesHook.php','CaseUpdatesHook', 'closureNotifyPrep'); 
 $hook_array['before_save'][] = Array(77, 'updateGeocodeInfo', 'modules/Cases/CasesJjwg_MapsLogicHook.php','CasesJjwg_MapsLogicHook', 'updateGeocodeInfo'); 
+$hook_array['before_save'][] = Array(78, 'upload files ', 'custom/modules/Cases/fileUpload.php','fileUpload', 'upload_files'); 
 //$hook_array['before_save'][] = Array(100, 'add ticket name ', 'custom/modules/Cases/validations.php','Validations', 'add_ticket_name'); 
 $hook_array['after_save'] = Array(); 
 $hook_array['after_save'][] = Array(10, 'Send contact case closure email', 'modules/AOP_Case_Updates/CaseUpdatesHook.php','CaseUpdatesHook', 'closureNotify'); 

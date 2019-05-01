@@ -42,11 +42,6 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
-        'LBL_EDITVIEW_PANEL1' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
       ),
       'syncDetailEditViews' => true,
     ),
@@ -58,71 +53,89 @@ array (
         array (
           0 => 
           array (
-            'name' => 'subject',
-            'studio' => true,
-            'label' => 'LBL_SUBJECT',
+            'name' => 'case_number',
+            'type' => 'readonly',
+            0 => 
+            array (
+            ),
           ),
-          1 => 'priority',
+          1 => 'account_name',
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'case_number',
-            'label' => 'LBL_CASE_NUMBER',
+            'name' => 'subject',
           ),
-          1 => 'account_name',
+          1 => 'priority',
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'state',
-            'comment' => 'The state of the case (i.e. open/closed)',
-            'label' => 'LBL_STATE',
+            'name' => 'category',
+            'label' => 'LBL_CATEGORY',
           ),
           1 => 'status',
         ),
         3 => 
         array (
-          0 => 'description',
+          0 => 
+          array (
+            'name' => 'start_date',
+            'studio' => true,
+            'label' => 'LBL_START_DATE',
+          ),
+          1 => 
+          array (
+            'name' => 'end_date',
+            'studio' => true,
+            'label' => 'LBL_DUE_DATE',
+          ),
         ),
         4 => 
         array (
-          0 => 'queue',
-          1 => 
+          0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO',
+            'name' => 'description',
           ),
         ),
         5 => 
         array (
           0 => 
           array (
-            'name' => 'created_by_name',
-            'studio' => true,
-            'label' => 'LBL_CREATED_BY_NAME',
-          ),
-          1 => 
-          array (
-            'name' => 'created_from_c',
-            'studio' => 'visible',
-            'label' => 'LBL_CREATED_FROM',
+            'name' => 'case_attachment',
+            'label' => 'LBL_CUSTOM_ATTACHMENT',
+            'customCode' => '<a href="index.php?entryPoint=customDownload&id={$fields.id.value}&type={$fields.case_attachment.value}&des=caseAttachment">{$fields.case_attachment.value}</a>',
           ),
         ),
         6 => 
         array (
           0 => 
           array (
-            'name' => 'category',
-            'studio' => true,
-            'label' => 'LBL_CATEGORY',
+            'name' => 'assigned_user_name',
           ),
           1 => 
           array (
-            'name' => 'custom_attachment_c',
-            'label' => 'LBL_CUSTOM_ATTACHMENT',
+            'name' => 'created_by_name',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spent_hours',
+          ),
+          1 => 
+          array (
+            'name' => 'total_spent_minuts',
+          ),
+        ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'time_category',
           ),
         ),
       ),
@@ -135,11 +148,6 @@ array (
             'name' => 'internal',
             'studio' => 'visible',
             'label' => 'LBL_INTERNAL',
-          ),
-          1 => 
-          array (
-            'name' => 'update_attachment_c',
-            'label' => 'LBL_UPDATE_ATTACHMENT',
           ),
         ),
         1 => 
@@ -155,51 +163,18 @@ array (
         array (
           0 => 
           array (
-            'name' => 'aop_case_updates_threaded',
-            'studio' => 'visible',
-            'label' => 'LBL_AOP_CASE_UPDATES_THREADED',
+            'name' => 'update_attachment',
+            'label' => 'LBL_UPDATE_ATTACHMENT',
+            'customCode' => '<a href="index.php?entryPoint=customDownload&id={$fields.id.value}&type={$fields.update_attachment.value}&des=updateAttachment">{$fields.update_attachment.value}</a>',
           ),
-        ),
-      ),
-      'lbl_editview_panel1' => 
-      array (
-        0 => 
-        array (
-          0 => 'resolution',
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'start_date',
-            'studio' => true,
-            'label' => 'LBL_START_DATE',
-          ),
-          1 => 
-          array (
-            'name' => 'end_date',
-            'studio' => true,
-            'label' => 'LBL_DUE_DATE',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'spent_hours',
-            'studio' => true,
-            'label' => 'LBL_SPENT_HOURS',
-          ),
-          1 => '',
         ),
         3 => 
         array (
           0 => 
           array (
-            'name' => 'chat_description_c',
-            'label' => 'LBL_CHAT_DESCRIPTION_C',
-            'readonly' => true,
-            'inline_edit' => false,
+            'name' => 'aop_case_updates_threaded',
+            'studio' => 'visible',
+            'label' => 'LBL_AOP_CASE_UPDATES_THREADED',
           ),
         ),
       ),

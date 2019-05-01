@@ -36,4 +36,6 @@ $mod_strings = array (
   'LBL_CARDHOLDERS_NAME' => 'Card Holders Name',
   'LBL_MEMBER_OF' => 'Parent Account',
   'LBL_BANK_ACC_NUMBER' => 'Bank Account#',
+  'LBL_ACCOUNTS_ACCOUNTS_1_FROM_ACCOUNTS_R_TITLE' => 'Accounts',
+  
 );

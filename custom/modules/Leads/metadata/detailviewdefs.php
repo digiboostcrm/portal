@@ -241,6 +241,16 @@ array (
             'label' => 'LBL_ASSIGNED_TO',
           ),
         ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'myimage_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MYIMAGE',
+          ),
+          1 => '',
+        ),
       ),
     ),
   ),

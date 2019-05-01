@@ -15,10 +15,36 @@ $dictionary["Case"]["fields"]["cases_dg_comments_1"] = array (
 );
 
 
- // created: 2019-01-03 21:04:31
+$dictionary['Case']['fields']['case_attachment'] = array(
+	'name' => 'case_attachment',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_CUSTOM_ATTACHMENT',
+	'type' => 'varchar',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
+
+$dictionary['Case']['fields']['update_attachment'] = array(
+	'name' => 'update_attachment',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_UPDATE_ATTACHMENT',
+	'type' => 'varchar',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
+
+ // created: 2019-04-11 20:43:15
 $dictionary['Case']['fields']['category']['name']='category';
 $dictionary['Case']['fields']['category']['studio']=true;
-$dictionary['Case']['fields']['category']['required']=false;
+$dictionary['Case']['fields']['category']['required']=true;
 $dictionary['Case']['fields']['category']['vname']='LBL_CATEGORY';
 $dictionary['Case']['fields']['category']['type']='enum';
 $dictionary['Case']['fields']['category']['options']='dom_ticket_category';
@@ -61,13 +87,14 @@ $dictionary['Case']['fields']['custom_attachment_c']['labelValue']='Attachment';
 
  
 
- // created: 2019-01-09 04:22:16
+ // created: 2019-04-11 20:44:30
 $dictionary['Case']['fields']['description']['audited']=true;
 $dictionary['Case']['fields']['description']['inline_edit']=true;
 $dictionary['Case']['fields']['description']['comments']='Full text of the description';
 $dictionary['Case']['fields']['description']['merge_filter']='disabled';
 $dictionary['Case']['fields']['description']['rows']='4';
 $dictionary['Case']['fields']['description']['cols']='20';
+$dictionary['Case']['fields']['description']['required']=false;
 
  
 
@@ -75,6 +102,19 @@ $dictionary['Case']['fields']['description']['cols']='20';
 $dictionary['Case']['fields']['email_uid_c']['inline_edit']=1;
 
  
+
+$dictionary['Case']['fields']['end_date'] = array(
+	'name' => 'end_date',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_DUE_DATE',
+	'type' => 'date',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
 
 $dictionary['Case']['fields']['file_mime_type'] = array(
   'name' => 'file_mime_type',
@@ -125,6 +165,21 @@ $dictionary['Case']['fields']['jjwg_maps_lng_c']['inline_edit']=1;
 
  
 
+ // created: 2019-03-25 19:42:04
+$dictionary['Case']['fields']['name']['inline_edit']=true;
+$dictionary['Case']['fields']['name']['comments']='The short description of the bug';
+$dictionary['Case']['fields']['name']['merge_filter']='disabled';
+
+ 
+
+ // created: 2019-04-11 20:45:19
+$dictionary['Case']['fields']['priority']['required']=true;
+$dictionary['Case']['fields']['priority']['inline_edit']=true;
+$dictionary['Case']['fields']['priority']['comments']='The priority of the case';
+$dictionary['Case']['fields']['priority']['merge_filter']='disabled';
+
+ 
+
 $dictionary['Case']['fields']['queue'] = array(
 	'name' => 'queue',
 	'studio' => true,
@@ -137,6 +192,27 @@ $dictionary['Case']['fields']['queue'] = array(
 	'reportable' => true,
 );
 
+
+$dictionary['Case']['fields']['start_date'] = array(
+	'name' => 'start_date',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_START_DATE',
+	'type' => 'date',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
+
+ // created: 2019-04-11 20:43:35
+$dictionary['Case']['fields']['status']['required']=true;
+$dictionary['Case']['fields']['status']['inline_edit']=true;
+$dictionary['Case']['fields']['status']['comments']='The status of the case';
+$dictionary['Case']['fields']['status']['merge_filter']='disabled';
+
+ 
 
  // created: 2019-01-27 16:47:07
 $dictionary['Case']['fields']['subject']['name']='subject';
@@ -154,9 +230,56 @@ $dictionary['Case']['fields']['subject']['merge_filter']='disabled';
 
  
 
- // created: 2018-06-25 10:47:50
+$dictionary['Case']['fields']['time_category'] = array(
+	'name' => 'time_category',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_TIME_CATEGORY',
+	'type' => 'enum',
+	'options' => 'dom_time_category',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+	'required' => true,
+);
+
+
+$dictionary['Case']['fields']['spent_hours'] = array(
+	'name' => 'spent_hours',
+	'studio' => true,
+	'required' => true,
+	'vname' => 'LBL_SPENT_HOURS',
+	'type' => 'int',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
+
+$dictionary['Case']['fields']['total_spent_minuts'] = array(
+	'name' => 'total_spent_minuts',
+	'studio' => true,
+	'required' => false,
+	'vname' => 'LBL_SPENT_MINUTS',
+	'type' => 'int',
+	'default_value' => '',
+	'importable' => true,
+	'audited' => false,
+	'reportable' => true,
+);
+
+
+ // created: 2019-04-18 18:22:07
+$dictionary['Case']['fields']['update_attachment']['inline_edit']=true;
+$dictionary['Case']['fields']['update_attachment']['merge_filter']='disabled';
+
+ 
+
+ // created: 2019-04-18 18:21:49
 $dictionary['Case']['fields']['update_attachment_c']['inline_edit']='1';
-$dictionary['Case']['fields']['update_attachment_c']['labelValue']='update attachment';
+$dictionary['Case']['fields']['update_attachment_c']['labelValue']='Attachment old';
 
  
 ?>

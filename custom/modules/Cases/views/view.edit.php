@@ -71,14 +71,40 @@ class CasesViewEdit extends ViewEdit {
 			$this->bean->assigned_user_id = " ";
 			$this->bean->created_by_name = $current_user->full_name;
 		}
-		
+			//$this->bean->spent_hours = " Null ";
 		parent::display();
+		
+		echo "<pre>";print_r($this->bean);die;
 		echo '<script type="text/javascript" src="custom/modules/Cases/js/validation_state.js"></script>';
-		//echo '<script>$("#created_by_name").val("'.$current_user->full_name.'");</script>';
 		$recID = $this->bean->fetched_row['id'];
-		if(empty($recID)){
-		}
 		echo '<script>$("#created_by_name").prop("readonly", true);</script>';
+		
+		$newScript = '';
+        if(empty($this->bean->id)){
+            $newScript = "
+                    $('#update_text').closest('.edit-view-row-item').hide();
+                    $('#update_text_label').closest('.edit-view-row-item').hide();
+                    $('#internal').closest('.edit-view-row-item').hide();
+                    $('#internal_label').closest('.edit-view-row-item').hide();
+                    $('#addFileButton').closest('.edit-view-row-item').hide();
+                    $('#case_update_form_label').closest('.edit-view-row-item').hide();"; 
+
+        }
+
+        echo  "<script>$(document).ready(function(){"
+                  . $newScript
+                  . "tinyMCE.execCommand('mceAddControl', false, document.getElementById('description'));
+                });
+            </script>";
+		if(!empty($this->bean->case_attachment)){			
+			$catt = "<p style = 'color : #f08377'>".$this->bean->case_attachment."</p>";
+			echo '<script> $("#case_attachment").parent("div").append("'.$catt.'"); </script> ';
+			
+		}	
+		if(!empty($this->bean->update_attachment)){			
+			$uatt = "<p style = 'color : #f08377'>".$this->bean->update_attachment."</p>";
+			echo '<script> $("#update_attachment").parent("div").append("'.$uatt.'"); </script> ';
+		}			
     }
 	
    

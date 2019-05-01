@@ -170,4 +170,8 @@ $searchFields['Cases'] = array (
   array (
     'query_type' => 'default',
   ),
+  'update_attachment' => 
+  array (
+    'query_type' => 'default',
+  ),
 );

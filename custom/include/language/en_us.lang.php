@@ -381,6 +381,7 @@ $GLOBALS['app_list_strings']['industry_dom']=array (
   'Utilities' => 'Utilities',
 );
 $GLOBALS['app_list_strings']['dom_ticket_subject']=array (
+  '' => 'SELECT',
   'ACCOUNT_MANAGEMENT_GROUP' => 'ACCOUNT MANAGEMENT',
   'Add/Modify DNS' => 'Add/Modify DNS',
   'Application Unresponsive' => 'Application Unresponsive',
@@ -434,6 +435,7 @@ $GLOBALS['app_list_strings']['dom_ticket_subject']=array (
   'Walk-thru' => 'Walk-thru',
 );
 $GLOBALS['app_list_strings']['dom_ticket_category']=array (
+  '' => 'SELECT',
   'Account Management' => 'Account Management',
   'Billing' => 'Billing',
   'Sales' => 'Sales',
@@ -451,6 +453,7 @@ $GLOBALS['app_list_strings']['account_manager_c_list']=array (
   '' => '',
 );
 $GLOBALS['app_list_strings']['case_status_dom']=array (
+  '' => 'SELECT',
   'Open_New' => 'New',
   'Open_Assigned' => 'Assigned',
   'Closed_Duplicate' => 'Duplicate',
@@ -460,6 +463,7 @@ $GLOBALS['app_list_strings']['case_status_dom']=array (
 );
 
 $GLOBALS['app_list_strings']['dom_ticket_subject']=array (
+  '' => 'SELECT',
   'ACCOUNT_MANAGEMENT_GROUP' => 'Account Management',
   'Add/Modify DNS' => 'Add/Modify DNS',
   'Applications' => 'Applications',
@@ -481,4 +485,17 @@ $GLOBALS['app_list_strings']['dom_ticket_subject']=array (
   'Website_Assessment' => 'Website Assessment ',
   'Website_Development' => 'Website Development',
   'Wordpress_Maintenance' => 'WordPress Maintenance',
+);
+$GLOBALS['app_list_strings']['dom_time_category']=array (
+  '' => 'SELECT',
+  'billable' => 'Billable',
+  'nonbillable' => 'Non Billable',
+  
+);
+$GLOBALS['app_list_strings']['case_priority_dom']=array (
+		'' => 'SELECT',
+        'P1' => 'High',
+        'P2' => 'Medium',
+        'P3' => 'Low',
+  
 );

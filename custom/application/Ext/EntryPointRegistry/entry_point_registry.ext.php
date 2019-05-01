@@ -124,6 +124,10 @@ $entry_point_registry['LogActivityData'] = array(
 	'auth' => false,
 );
 
+$entry_point_registry['customDownload'] = array(
+	'file' => 'custom/customDownload.php',
+	'auth' => false,
+);
 
 $entry_point_registry['RSPushServiceCallback'] = array(
     'file' => 'modules/UT_RightSignature/RSPushServiceCallback.php',

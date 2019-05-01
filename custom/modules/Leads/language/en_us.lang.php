@@ -1,5 +1,5 @@
 <?php
-// created: 2018-10-04 16:59:55
+// created: 2019-04-19 17:34:04
 $mod_strings = array (
   'LBL_LEAD_SOURCE' => 'Lead Source:',
   'LBL_FAX_PHONE' => 'Facebook Acct:',
@@ -13,4 +13,5 @@ $mod_strings = array (
   'LBL_CONTACT_LEAD' => 'Contacts',
   'LBL_LEAD_SOURCE_1' => 'Secondary Lead Source',
   'LBL_SDR' => 'Assigned SDR',
+  'LBL_MYIMAGE' => 'myImage',
 );

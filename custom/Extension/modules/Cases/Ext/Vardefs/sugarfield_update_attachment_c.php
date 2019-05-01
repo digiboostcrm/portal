@@ -1,6 +1,6 @@
 <?php
- // created: 2018-06-25 10:47:50
+ // created: 2019-04-18 18:21:49
 $dictionary['Case']['fields']['update_attachment_c']['inline_edit']='1';
-$dictionary['Case']['fields']['update_attachment_c']['labelValue']='update attachment';
+$dictionary['Case']['fields']['update_attachment_c']['labelValue']='Attachment old';
 
  ?>

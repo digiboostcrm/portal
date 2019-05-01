@@ -104,6 +104,12 @@ array (
         'default' => true,
         'width' => '10%',
       ),
+      'name' => 
+      array (
+        'name' => 'name',
+        'default' => true,
+        'width' => '10%',
+      ),
     ),
   ),
   'templateMeta' => 

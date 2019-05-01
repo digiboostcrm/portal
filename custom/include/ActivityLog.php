@@ -37,7 +37,7 @@ Class ActivityLog{
 		}
 		$aData['RECORD_ID'] = $bean->id;
 		$aData['EMAIL'] = $bean->email1;
-		echo "<pre>";print_r($bean);die;
+		
 		$data_encoded =  json_encode($aData);
 		$ip = getenv('HTTP_CLIENT_IP')?:
 				getenv('HTTP_X_FORWARDED_FOR')?:

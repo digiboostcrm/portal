@@ -177,6 +177,7 @@ array (
           0 => '',
         ),
       ),
+	  /*
       'lbl_editview_panel2' => 
       array (
         0 => 
@@ -264,6 +265,7 @@ array (
           ),
         ),
       ),
+	  */
       'LBL_PANEL_ADVANCED' => 
       array (
         0 => 
@@ -309,6 +311,8 @@ array (
           0 => 'campaign_name',
         ),
       ),
+	  
+	  /*
       'lbl_editview_panel3' => 
       array (
         0 => 
@@ -431,6 +435,7 @@ array (
           ),
         ),
       ),
+	  */
     ),
   ),
 );
