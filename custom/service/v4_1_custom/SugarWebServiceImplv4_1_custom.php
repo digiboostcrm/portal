@@ -2087,6 +2087,7 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 		$bean->account_id = $accID;
 		$bean->name = $bean->subject;
 		$bean->assigned_user_id = ' ';
+		$GLOBALS['log']->fatal(print_r($bean , 1) );
 		$bean->save();
 		
 		return (array('id' => $bean->id, 'entry_list' => $name_value_list));
@@ -2251,6 +2252,7 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 			
 			
 		}
+		//return $dataValue;
 		if(!empty($caseId)){
 			
 			global $db;
@@ -2479,6 +2481,7 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 	
 	
 
+
 							/*********Add Documents to Ticket**********/	
 	public function add_doc_ticket($session,$module_name, $name_value_list) {
 		/*     	
@@ -2517,7 +2520,6 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 		$queryGet = "SELECT update_attachment_c FROM `cases_cstm` WHERE id_c = '$id'";
 		$result = $db->query($queryGet);
 		$dbImages = $db->fetchByAssoc($result);
-
 		if(!$dbImages){
 			return array('Error' => 'Please Give Correct Record ID');
 		}
@@ -2565,7 +2567,6 @@ if (!self::$helperObject->checkSessionAndModuleAccess($session, 'invalid_session
 		
 		return array('New Added Documents' => $images , 'OLD Documents' => explode(":",$dbImages['update_attachment_c']) , 'File Path' => 'https://digiboost.com/upload/multi_'.$id.'/update_attachment_c/');
 				
-
     }
 	
 	/* for testing purpose */

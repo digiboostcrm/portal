@@ -123,11 +123,18 @@ array (
         ),
         5 => 
         array (
-          0 => 
+          /*
+		  0 => 
           array (
             'name' => 'case_attachment',
             'label' => 'LBL_CUSTOM_ATTACHMENT',
             'customCode' => '<input type="file" name="case_attachment" id="case_attachment">',
+          ),
+		  */
+		  0 => 
+          array (
+            'name' => 'custom_attachment_c',
+            'label' => 'LBL_CUSTOM_ATTACHMENT',
           ),
         ),
         6 => 
@@ -182,11 +189,18 @@ array (
         ),
         2 => 
         array (
-          0 => 
+          /*
+		  0 => 
           array (
             'name' => 'update_attachment',
             'label' => 'LBL_UPDATE_ATTACHMENT',
             'customCode' => '<input type="file" name="update_attachment" id="update_attachment" value="cdsx.jpg">',
+          ),
+		  */
+		  0 => 
+          array (
+            'name' => 'update_attachment_c',
+            'label' => 'LBL_UPDATE_ATTACHMENT',
           ),
         ),
         3 => 

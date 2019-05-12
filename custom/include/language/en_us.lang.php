@@ -5,8 +5,8 @@ $app_list_strings['record_type_display']['Cases']='Ticket';
 $app_list_strings['parent_type_display']['Cases']='Ticket';
 $app_list_strings['record_type_display_notes']['Cases']='Ticket';
 $GLOBALS['app_list_strings']['lead_source_dom']=array (
-  '' => '',
-  'Bark' => 'Bark',
+  '' => 'SELECT',
+  'Bark US' => 'Bark US',
   'Cold Call' => 'Cold Call',
   'Existing Customer' => 'Existing Customer',
   'Self Generated' => 'Self Generated',
@@ -132,7 +132,7 @@ $GLOBALS['app_list_strings']['user_question_dom']=array (
   'Father_middle_Name' => 'What is your father\'s middle name?',
 );
 $GLOBALS['app_list_strings']['lead_status_dom']=array (
-  '' => '',
+  '' => 'SELECT',
   'New' => 'New',
   'Assigned' => 'Assigned',
   'In Process' => 'In Process',
@@ -180,7 +180,7 @@ $GLOBALS['app_list_strings']['outsourced_dom']=array (
   
 );
 $GLOBALS['app_list_strings']['opportunity_type_dom']=array (
-  '' => '',
+  '' => 'SELECT',
   'App_Design' => 'App Design',
   'Hosting' => 'Hosting',
   'Logo_Design' => 'Logo Design',
@@ -322,8 +322,9 @@ $GLOBALS['app_list_strings']['sdr_list']=array (
   'Omar_Acosta' => 'Omar Acosta',
   'Rana_McDonald' => 'Rana McDonald',
 );
-
+/*
 $GLOBALS['app_list_strings']['lead_source_1']=array (
+  '' => '',
   'Bark_US' => 'Bark US',
   'Call_In' => 'Call In',
   'Channel' => 'Channel',
@@ -341,6 +342,18 @@ $GLOBALS['app_list_strings']['lead_source_1']=array (
   'unknown' => 'Unknown',
   'WP_Engine' => 'WP Engine',
 );
+*/
+$GLOBALS['app_list_strings']['lead_source_1']=array (
+  '' => 'SELECT',
+  'Bark_US' => 'Bark US',
+  'Call_In' => 'Call In',
+  'Channel' => 'Channel Partner',
+  'Chat' => 'Chat',
+  'Outbound' => 'Outbound',
+  'Personal_Referral' => 'Personal_Referral',
+  'IB' => 'IB',
+  'Site_Submission' => 'Site Submission',
+  );
 $GLOBALS['app_list_strings']['industry_dom']=array (
   '' => '',
   'Apparel' => 'Apparel',
@@ -498,4 +511,67 @@ $GLOBALS['app_list_strings']['case_priority_dom']=array (
         'P2' => 'Medium',
         'P3' => 'Low',
   
+);
+$GLOBALS['app_list_strings']['lead_secondary_dom']=array (
+  '' => 'SELECT',
+  'Alert_Logic' => 'Alert Logic',
+  'Cogeco_Peer1' => 'Cogeco Peer1',
+  'Get_Me_Friends' => 'Get Me Friends',
+  'Google' => 'Google',
+  'Liquid_Web' => 'Liquid Web',
+  'Local_Leads' => 'Local Leads',
+  'Mailgun' => 'Mailgun',
+  'Pressable' => 'Pressable',
+  'Rackspace' => 'Rackspace',
+  'WP_Engine' => 'WP Engine',
+  'Unknown' => 'Unknown',
+);
+$GLOBALS['app_list_strings']['dom_ticket_category']=array (
+  'SELECT' => 'SELECT',
+  'Account Management' => 'Account Management',
+  'Billing' => 'Billing',
+  'Sales' => 'Sales',
+  'Support' => 'Web Support',
+  'Marketing' => 'Marketing',
+  'Project Manager' => 'Project Manager',
+);
+$GLOBALS['app_list_strings']['task_status_dom']=array (
+  'Not Started' => 'Not Started',
+  'In Progress' => 'In Progress',
+  'Completed' => 'Completed',
+  'Pending Input' => 'Pending Feedback',
+);
+$GLOBALS['app_list_strings']['lead_status_dom']=array (
+  '' => 'SELECT',
+  'New' => 'New',
+  'Assigned' => 'Assigned',
+  'In Process' => 'Process of Qualifying',
+  'Nurture' => 'Nurture',
+  'Dead' => 'Dead',
+);
+
+$GLOBALS['app_list_strings']['lead_source_1']=array (
+  '' => 'SELECT',
+  'Alert_Logic' => 'Alert Logic',
+  'Cogeco_Peer1' => 'Cogeco Peer1',
+  'Get_Me_Friends' => 'Get Me Friends',
+  'Google' => 'Google',
+  'Liquid_Web' => 'Liquid Web',
+  'Local_Leads' => 'Local Leads',
+  'Mailgun' => 'Mailgun',
+  'Pressable' => 'Pressable',
+  'Rackspace' => 'Rackspace',
+  'WP_Engine' => 'WP Engine',
+  'Unknown' => 'Unknown',
+);
+
+$GLOBALS['app_list_strings']['opportunity_type_dom']=array (
+  '' => 'SELECT',
+  'App_Design' => 'App Design',
+  'Hosting' => 'Hosting',
+  'Logo_Design' => 'Logo Design',
+  'Social_Media' => 'Social Media',
+  'Web_Dev' => 'Web Development',
+  'SEO' => 'SEO',
+  'PPC/SEM' => 'PPC/SEM',
 );

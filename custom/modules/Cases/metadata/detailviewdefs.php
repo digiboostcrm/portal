@@ -102,11 +102,18 @@ array (
         ),
         5 => 
         array (
-          0 => 
+          /*
+		  0 => 
           array (
             'name' => 'case_attachment',
             'label' => 'LBL_CUSTOM_ATTACHMENT',
             'customCode' => '<a href="index.php?entryPoint=customDownload&id={$fields.id.value}&type={$fields.case_attachment.value}&des=caseAttachment">{$fields.case_attachment.value}</a>',
+          ),
+		  */
+		  0 => 
+          array (
+            'name' => 'custom_attachment_c',
+            'label' => 'LBL_CUSTOM_ATTACHMENT',
           ),
         ),
         6 => 
@@ -161,11 +168,18 @@ array (
         ),
         2 => 
         array (
-          0 => 
+          /*
+		  0 => 
           array (
             'name' => 'update_attachment',
             'label' => 'LBL_UPDATE_ATTACHMENT',
             'customCode' => '<a href="index.php?entryPoint=customDownload&id={$fields.id.value}&type={$fields.update_attachment.value}&des=updateAttachment">{$fields.update_attachment.value}</a>',
+          ),
+		  */
+		  0 =>
+		  array (
+            'name' => 'update_attachment_c',
+            'label' => 'LBL_UPDATE_ATTACHMENT',
           ),
         ),
         3 => 

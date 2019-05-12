@@ -2,10 +2,15 @@
 Class fileUpload{
 	public function upload_files(&$bean, $event, $arguments){
 		global $sugar_config;
-		if(empty($bean->name)){
+		//if(empty($bean->name)){
 			$bean->name = $bean->subject;
 			
-		}
+		//}
+		/*
+		echo '<pre>';
+			print_r($bean);die;
+		echo '</pre>';
+		*/
 				/*Add Total Minuts Logic */
 		$bean->total_spent_minuts = $bean->spent_hours + $bean->total_spent_minuts;
 		if(!empty($_FILES["case_attachment"]["name"])){			

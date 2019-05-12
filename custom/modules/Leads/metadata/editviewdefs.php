@@ -16,7 +16,10 @@ array (
         ),
         'buttons' => 
         array (
-          0 => 'SAVE',
+          0 => 
+		  array(
+			'customCode' => '<input title="Save" accesskey="a" class="button primary" onclick="var _form = document.getElementById(\'EditView\'); _form.action.value=\'Save\'; if( check_form(\'EditView\') , validate_source())SUGAR.ajaxUI.submitForm(_form);return false;" type="submit" name="button" value="Save" id="SAVE">',
+		  ),
           1 => 'CANCEL',
         ),
       ),
@@ -60,6 +63,10 @@ array (
     array (
       'LBL_CONTACT_INFORMATION' => 
       array (
+		11 =>
+		array(
+			0 => 'company_name',
+			),
         0 => 
         array (
           0 => 'title',
@@ -69,7 +76,7 @@ array (
           0 => 
           array (
             'name' => 'first_name',
-            'customCode' => '{html_options name="salutation" id="salutation" options=$fields.salutation.options selected=$fields.salutation.value}&nbsp;<input name="first_name"  id="first_name" size="25" maxlength="25" type="text" value="{$fields.first_name.value}">',
+            //'customCode' => '{html_options name="salutation" id="salutation" options=$fields.salutation.options selected=$fields.salutation.value}&nbsp;<input name="first_name"  id="first_name" size="25" maxlength="25" type="text" value="{$fields.first_name.value}">',
           ),
           1 => 'last_name',
         ),

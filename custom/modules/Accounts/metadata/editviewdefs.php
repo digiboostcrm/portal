@@ -266,6 +266,10 @@ array (
 	  */
       'LBL_PANEL_ADVANCED' => 
       array (
+		11 => 
+		array(
+          0 => 'marketing_project_domain',
+		),
         0 => 
         array (
           0 => 'account_type',

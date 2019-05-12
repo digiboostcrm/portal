@@ -1,5 +1,6 @@
 <?php
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
+
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
@@ -38,37 +39,18 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  ********************************************************************************/
 
-/*********************************************************************************
 
- * Description:  Defines the English language pack for the base application.
- * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.
- * All Rights Reserved.
- * Contributor(s): ______________________________________..
- ********************************************************************************/
+class LeadsViewEdit extends ViewEdit
+{
+ 	public function __construct()
+ 	{
+ 		parent::__construct();
+ 		$this->useForSubpanel = true;
+ 		$this->useModuleQuickCreateTemplate = true;
+ 	}
+	public function display(){
+		parent::display();
+		echo '<script type="text/javascript" src="custom/modules/Leads/js/source_logic.js"></script>';
+	}
 
-$mod_strings = array (
-	
-	'LBL_BANK_CITY' => 'Bank City/State',
-	'LBL_BANK_ROUTING' => 'Bank Routing#',
-	'LBL_BANK_ACC_TITLE' => 'Bank Account Title',
-	'LBL_BANK_NAME' => 'Bank Name',
-	'LBL_BANK_ACC_NUMBER' => 'Bank Account#',
-	'LBL_CREDIT_CARD_NUMBER' => 'Credit Card Number',
-	'LBL_CREDIT_CARD_NAME' => 'Card Holders Name',
-	'LBL_CREDIT_CARD_EXPIRE' => 'Credit Card Expire Date',
-	'LBL_CREDIT_CARD_CCV' => 'Credit Card CCV#',
-	'LBL_CREDIT_CARD_AMEX' => 'Amex',
-	'LBL_BANK_SAVING' => 'Saving',
-	'LBL_BANK_CHECKING' => 'Checking',
-	'LBL_CREDIT_CARD_VISA' => 'Visa',
-	'LBL_CREDIT_CARD_DISCOVER' => 'Discover',
-	'LBL_CREDIT_CARD_MASTER' => 'MasterCard',
-	'LBL_ACCOUNT_NUMBER_C' => 'Digiboost Account Number',
-	'LBL_PINTREST_PASSWORD' => 'Pinterest Number',
-	'LBL_PINTREST_NUMBER' => 'Pinterest Password',
-	'LBL_BILLING_FREQUECY' => 'Billing Frequecy',
-	'LBL_ON_BOARDING' => 'On Boarding',
-	'LBL_ACTIVE' => 'Active',
-	'LBL_MARKETING_PROJECT' => 'Marketing Project ID And Domain',
-);
-?>
+}

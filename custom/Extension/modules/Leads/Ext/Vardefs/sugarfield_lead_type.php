@@ -1,5 +1,5 @@
 <?php
- // created: 2018-03-01 16:32:40
+ // created: 2019-05-10 21:17:17
 $dictionary['Lead']['fields']['lead_type']['name']='lead_type';
 $dictionary['Lead']['fields']['lead_type']['studio']=true;
 $dictionary['Lead']['fields']['lead_type']['required']=true;

@@ -73,8 +73,6 @@ class CasesViewEdit extends ViewEdit {
 		}
 			//$this->bean->spent_hours = " Null ";
 		parent::display();
-		
-		echo "<pre>";print_r($this->bean);die;
 		echo '<script type="text/javascript" src="custom/modules/Cases/js/validation_state.js"></script>';
 		$recID = $this->bean->fetched_row['id'];
 		echo '<script>$("#created_by_name").prop("readonly", true);</script>';
@@ -96,8 +94,12 @@ class CasesViewEdit extends ViewEdit {
                   . "tinyMCE.execCommand('mceAddControl', false, document.getElementById('description'));
                 });
             </script>";
+			$case_attachment = $this->bean->case_attachment;
+			$rec_id = $this->bean->id;
+			
 		if(!empty($this->bean->case_attachment)){			
-			$catt = "<p style = 'color : #f08377'>".$this->bean->case_attachment."</p>";
+			//$catt = "<p style = 'color : #f08377'>".$this->bean->case_attachment."</p>";
+			$catt = "<p style = 'color : #f08377'><a href='index.php?entryPoint=customDownload&id=$rec_id&type=$case_attachment&des=caseAttachment'>$case_attachment</a></p>";
 			echo '<script> $("#case_attachment").parent("div").append("'.$catt.'"); </script> ';
 			
 		}	
